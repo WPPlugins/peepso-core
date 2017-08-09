@@ -1,0 +1,104 @@
+//
+//  STRUCTURE: PHOTOS
+//
+
+
+
+//
+//  Wrapping a list of photo thumbnails
+//
+.ps-photos {
+  @extend %photos;
+}
+
+
+//
+//  A item of photo list, wrapping photo without
+//  any info
+//
+.ps-photos__item {
+  @extend %photo__item;
+}
+
+
+//
+//  A item of photo list, wrapping photo without
+//  any info
+//
+.ps-photos__item-wrapper {
+  @extend %photo__wrapper;
+}
+
+
+//
+//  Overlay for a photo item, indicates
+//  a hover state
+//
+.ps-photos__item-overlay {
+  position: absolute;
+  top: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  transition: background-color 0.2s ease;
+
+  &:hover,
+  &:focus {
+    background-color: $photo-item-overlay;
+  }
+
+  > span {
+    position: relative;
+    display: block;
+    height: 100%;
+
+    > i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 40px;
+      margin-left: -20px;
+      font-size: 28px;
+      color: #fff;
+      text-align: center;
+      transform: translateY(-50%);
+    }
+  }
+
+  .ps-photos__item:hover & {
+    display: block;
+  }
+}
+
+
+//
+//  Wrapping a photos upload container or drag&drop area
+//
+.ps-photos__upload {
+  margin-top: $padding-base;
+}
+
+
+.ps-photos__upload-area {
+  margin-top: $padding-base;
+  padding: $padding-base;
+  border: $divider-dashed-md;
+  text-align: center;
+  cursor: pointer;
+
+  i {
+    display: block;
+    margin-bottom: $padding-sm;
+    font-size: 30px;
+    line-height: 1;
+  }
+
+  span {
+    display: block;
+  }
+
+  &+ .ps-form__helper {
+    text-align: center;
+  }
+}

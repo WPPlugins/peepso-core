@@ -1,0 +1,14 @@
+/*
+ *  PeepSo
+ *  Dark Theme RTL Template of PeepSo
+ *  @author PeepSo, Inc
+ *  Copyright 2015 PeepSo, Inc. GPL 2.0 licensed.
+ */
+
+@import 'themes/dark/variables';
+
+// Override direction setting
+$scss-direction: rtl;
+
+@import 'theme';
+@import 'themes/dark/custom';

@@ -1,0 +1,28 @@
+//
+//  LABEL COMPONENT
+//
+
+
+
+.ps-label {
+  display: inline-block;
+  padding: 2px 4px;
+  font-size: 11px;
+  color: #fff;
+  background-color: $color-primary;
+}
+
+
+.ps-label--success {
+  background-color: $color-success;
+}
+
+
+.ps-label--warning {
+  background-color: $color-warning;
+}
+
+
+.ps-label--danger {
+  background-color: $color-danger;
+}

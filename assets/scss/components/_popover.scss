@@ -1,0 +1,204 @@
+//
+//  POPOVER COMPONENT
+//
+
+
+
+.ps-popover {
+  position: absolute;
+  z-index: map-get($zindex, popover);
+  overflow: hidden;
+  width: 320px;
+  font-family: $font-family;
+  background-color: $popover-bg;
+
+  @extend %box-shadow;
+
+  @include media('large') {
+    width: 400px;
+  }
+
+  @include media('small') {
+    left: 0 !important;
+    width: 100%;
+  }
+
+  #wpadminbar & {
+    position: absolute;
+    width: 320px;
+
+    @extend %box-shadow-dark;
+
+    * {
+      line-height: 1.2;
+    }
+
+    *, *:before, *:after {
+      box-sizing: border-box;
+    }
+  }
+}
+
+
+.ps-popover-list {
+  @extend %ps-list;
+
+  max-height: 268px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  > li {
+    padding: 0;
+    margin: 0;
+
+    #wpadminbar & {
+      float: none;
+    }
+
+    &:first-child {
+      .ps-comment-item {
+        border-top: none;
+
+        #wpadminbar & {
+          border-top: none !important;
+        }
+      }
+    }
+  }
+
+  .ps-comment-item {
+    @if $scss-direction == rtl {
+      padding-left: $padding-base;
+    } @else {
+      padding-right: $padding-base;
+    }
+
+    #wpadminbar & {
+      height: auto;
+    }
+  }
+
+  .ps-avatar-comment {
+    padding-top: 0;
+    vertical-align: middle;
+  }
+}
+
+
+.ps-popover-loading {
+  text-align: center;
+
+  > img {
+    vertical-align: middle;
+  }
+}
+
+
+.ps-popover-error {
+  padding: $padding-sm;
+}
+
+
+.ps-popover-actions {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+
+  @if $scss-direction == rtl {
+    text-align: left;
+  } @else {
+    text-align: right;
+  }
+}
+
+
+.ps-popover-header {
+  padding-left: $padding-sm;
+  padding-right: $padding-sm;
+  font-size: $font-size-sm;
+  line-height: $line-height-md;
+  border-bottom: $divider;
+
+  > a {
+    @if $scss-direction == rtl {
+      float: left;
+    } @else {
+      float: right;
+    }
+  }
+}
+
+
+.ps-popover-footer {
+  padding: 3px;
+  text-align: center;
+
+  > a {
+    display: block;
+    padding: $padding-sm;
+    font-size: 13px;
+    line-height: 1.2;
+    background: $btn-bg;
+    color: $btn-color !important;
+
+    &:hover,
+    &:focus {
+      background: $btn-bg-hover;
+      color: $btn-color-hover !important;
+    }
+
+    #wpadminbar & {
+      height: auto;
+      padding: $padding-sm;
+      background: $btn-bg;
+
+      &:hover,
+      &:focus {
+        background: $btn-bg-hover;
+      }
+    }
+  }
+}
+
+
+//
+//  Popover arrow
+//
+.ps-popover__arrow {
+  position: absolute;
+  display: block;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 8px;
+
+  &:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 7px;
+  }
+}
+
+
+//
+//  Popover up mofidier class
+//
+.ps-popover__arrow--up {
+  top: -8px;
+  left: $padding-sm;
+  border-top-width: 0;
+  border-bottom-color: #E3E5E7;
+
+  &:after {
+    top: 1px;
+    margin-left: -7px;
+    content: "";
+    border-top-width: 0;
+    border-bottom-color: #fff;
+  }
+}

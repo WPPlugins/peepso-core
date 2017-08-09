@@ -1,0 +1,75 @@
+//
+//  TYPOGRAPHY
+//
+
+
+
+//
+//  Helper class for centering text & inline elements
+//
+.ps-text--center {
+  text-align: center !important;
+}
+
+
+//
+//  Align text & inline elements
+//  to the left side
+//
+.ps-text--left {
+  @if $scss-direction == rtl {
+    text-align: right !important;
+  } @else {
+    text-align: left !important;
+  }
+}
+
+
+//
+//  Align text & inline elements
+//  to the right side
+//
+.ps-text--right {
+  @if $scss-direction == rtl {
+    text-align: left !important;
+  } @else {
+    text-align: right !important;
+  }
+}
+
+
+//
+//  Applies light color on text,
+//  so it's less visible
+//
+.ps-text--muted {
+  color: $color-gray !important;
+}
+
+
+//
+//  Applies strong color on text,
+//  so it's used on important texts
+//
+.ps-text--danger {
+  color: $color-danger !important;
+
+  & a {
+    color: $color-danger !important; 
+  }
+}
+
+
+//
+//  Remove margins from text, used
+//  on headings
+//
+.ps-text--title {
+  margin-top: 0 !important;
+  margin-bottom: $padding-base !important;
+}
+
+
+.ps-text--formated {
+  line-height: 1.2;
+}

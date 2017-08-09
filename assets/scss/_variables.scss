@@ -1,0 +1,609 @@
+//
+//  DEFAULT VARIABLES
+//
+//  A configuration base where you can edit most important
+//  things and create a completely different style.
+
+
+
+//
+//  OPTIONS
+//  Usefull options to easy change design style.
+
+//  Avatar
+
+$scss-avatar-shape:      circle !default; // [ square | circle ]
+$scss-avatar-style:      bordered !default; // [ plain | bordered ]
+
+//  LTR / RLT Support
+
+$scss-direction:         ltr !default;
+
+//  Stream position
+
+$scss-stream-position:   left !default; // [ left | right ]
+
+
+//  Main Layout
+$primary-width:          61.8034% !default;
+$secondary-width:        38.1966% !default;
+
+
+
+
+//
+//  PADDING
+//
+
+$padd:                   10px;
+$padd--med:              $padd + ($padd / 2);
+$padding-sm:             8.5px;
+$padding-base:           14px;
+$padding-lg:             24px;
+
+
+
+
+//
+//  TYPOGRAPHY
+//
+
+$font-family:            "Helvetica",Arial,sans-serif;
+
+//  Font-size
+
+$font-size-xs:           10px;
+$font-size-sm:           12px;
+$font-size-base:         14px;
+$font-size-md:           18px;
+$font-size-lg:           24px;
+
+//  Size used for elements where base font-size is too high, and
+//  small font-size is too low.
+
+$font-size-alt:          13px;
+
+$font-size:              $font-size-base;
+
+//  Line-height
+
+$line-height-sm:         16px;
+$line-height-base:       18px;
+$line-height-md:         24px;
+
+
+
+
+//
+//  MAIN WRAPPER
+//
+
+$main-wrap-bg:           #ECF0F1;
+$main-wrap-padding:      $padding-base;
+
+
+
+
+//
+//  COLORS
+//  Set of colors used in whole design.
+
+$color-gray-light:       #7E7E7E;
+$color-gray:             #565656;
+$color-gray-dark:        #333;
+
+$color-light:            rgba(0,0,0,.1);
+$color-neutral:          $color-gray;
+$color-primary:          #00b0ff;
+$color-success:          #2FBA34;
+$color-warning:          #ffa726;
+$color-danger:           #e53935;
+$color-brand:            #d0423c;
+
+$color-text:             $color-gray-dark;
+$color-text-light:       $color-gray-light;
+$color-text-dark:        $color-gray;
+$color-icon:             $color-neutral;
+
+$color-link:             #2196f3;
+$color-link-hover:       darken($color-link, 20%);
+
+$color-muted:            #B1B1B1;
+
+
+
+
+//
+//  FOCUS AREA
+//
+
+$focus-bg:                 #f5f5f5;
+$focus-color:              $color-gray-light;
+$focus-separator:          1px solid #e4e4e4;
+$focus-border:             1px solid #ededed;
+$focus-link-bg--current:   rgba(0,0,0,.03);
+$focus-interactions-bg:    white;
+
+$focus-opt-icon-color:     #F9F9F9;
+
+
+
+
+//
+//  MODULE COMPONENT
+//
+
+$module-bg:              white;
+$module-border:          1px solid rgba(0,0,0,.08);
+$module-separator:       1px solid rgba(0,0,0,.08);
+
+
+
+
+//
+//  PAGINATION COMPONENT
+//
+
+$pagination-bg:                #F5F7F7;
+$pagination-item-bg-hover:     rgba(0,0,0,.05);
+
+
+
+
+//
+//  POPOVER COMPONENT
+//
+
+$popover-bg:                   white;
+
+
+
+
+//
+//  ALERT COMPONENT
+//
+
+$alert:                  #b3e5fc;
+$alert-color:            #2196f3;
+$alert-padding:          $padding-sm $padding-base;
+$alert-font-size:        $font-size-sm;
+$alert-line-height:      $line-height-base;
+
+//  Alert variations
+
+$alert-success:          #66bb6a;
+$alert-success-color:    #e8f5e9;
+
+$alert-warning:          #f9b836;
+$alert-warning-color:    #fff;
+
+$alert-danger:           #ef5350;
+$alert-danger-color:     #ffebee;
+
+
+
+
+//
+//  BORDER RADIUS
+//
+
+$border-radius-sm:       4px;
+$border-radius:          6px;
+
+
+
+
+//
+//  MEDIA QUERIES
+//
+
+$xsmall:                 360px;
+$small:                  480px;
+$medium:                 481px;
+$large:                  992px;
+
+
+
+
+//
+//  Z-INDEX MAP
+//
+
+$zindex: (
+  normal:                 5,
+  base:                  10,
+  dropdown:              20,
+  popover:               30,
+  chat:                  1000,
+  dialog:                200000
+);
+
+
+
+
+//
+//  BUTTONS
+//  Here you can edit colors of button variables.
+
+//  Base button
+
+$btn-bg:                 #EFEFEF;
+$btn-bg-hover:           darken($btn-bg, 5%);
+$btn-color:              #424242;
+$btn-color-hover:        black;
+$btn-border:             none;
+$btn-font-size:          $font-size-base;
+$btn-line-height:        $line-height-base;
+$btn-padding:            7.2px $padding-sm;
+
+//  Button variations
+
+$btn-primary:            $color-primary;
+$btn-success:            $color-success;
+$btn-warning:            $color-warning;
+$btn-danger:             $color-danger;
+
+$btn-sm-font-size:       $font-size-sm;
+$btn-sm-line-height:     $line-height-sm;
+$btn-sm-padding:         5px $padding-sm;
+
+$btn-md-font-size:       $font-size-md;
+$btn-md-line-height:     $line-height-md;
+$btn-md-padding:         $padding-sm;
+
+
+
+
+//
+//  TOOLBAR COMPONENT
+//
+
+$toolbar-bg:                    #f3f3f3;
+$toolbar-color:                 #666;
+$toolbar-color--hover:          #333;
+$toolbar-separator:             1px solid rgba(0,0,0,.05);
+$toolbar-item-bg--hover:        rgba(0,0,0, .025);
+
+$toolbar-submenu-bg:            #fff;
+$toolbar-submenu-shadow:        #e9e9e9;
+
+
+
+
+//
+//  SUBMENU COMPONENT
+//
+
+$submenu-bg:                 #f5f5f5;
+$submenu-separator:          1px solid #e4e4e4;
+$submenu-link-bg--current:   rgba(0,0,0,.03);
+
+
+
+
+//
+//  STREAM
+//
+
+$stream-post-color:             $color-text;
+$stream-post-bg:                white;
+$stream-post-border:            1px solid rgba(0,0,0,.08);
+
+$stream-post-meta-color:        $color-text-dark;
+$stream-post-time-color:        $color-text-light;
+
+$stream-post-status-bg:         rgba(0,0,0,.02);
+
+$stream-quote-color:            $color-text;
+$stream-quote-border:           3px solid #E3E5E7;
+
+$stream-post-pin-bg:            $color-primary;
+$stream-post-pin-color:         #fff;
+
+
+
+
+//
+//  TAB COMPONENT
+//
+
+$tab-item-bg:            #E0E7E8;
+$tab-item-bg-active:     white;
+$tab-item-color:         $color-text;
+
+$tab-content-bg:         white;
+$tab-content-color:      $color-gray-dark;
+
+$tabs-item-bg:           #F5F5F5;
+$tabs-item-active-bg:    #FFF;
+
+$tabs-item-border:       1px solid rgba(0,0,0, .05);
+
+$tabs-arrows-color:      rgba(0,0,0,.15);
+
+
+
+
+//
+//  COMMENTS
+//
+
+$comment-bg:                    rgba(0,0,0,.02);
+
+$comment-item-color:            $color-text;
+$comment-item-separator:        1px solid rgba(0,0,0,.1);
+
+$comment-reply-bg:              rgba(0,0,0,.02);
+$comment-reply-separator:       1px solid rgba(0,0,0,.04);
+
+$comment-more-separator:        1px solid rgba(0,0,0,.1);
+
+
+
+
+//
+//  POSTBOX COMPONENT
+//
+
+$postbox-bg:                  white;
+$postbox-color:               $color-text;
+$postbox-status-bg:           transparent;
+
+$postbox-textarea-color:      $color-text;
+
+$postbox-tab-color:           $color-gray-dark;
+$postbox-tab-color-hover:     black;
+
+$postbox-tab-bg:              #EFEFEF;
+$postbox-tab-bg-hover:        rgba(0,0,0,.05);
+$postbox-tab-bg-active:       rgba(0,0,0,.05);
+
+$postbox-tabs-border:         1px solid rgba(0,0,0,.05);
+
+$postbox-charcount-bg:        #f1f1f1;
+$postbox-charcount-color:     $color-gray-dark;
+
+$postbox-img-bg:              $main-wrap-bg;
+$postbox-img-border:          1px solid #EAEAEA;
+$postbox-img-action-bg:       white;
+$postbox-img-action-color:    $color-icon;
+
+
+
+
+//
+//  DROPDOWN COMPONENT
+//
+
+$dropdown-bg:                 white;
+$dropdown-border:             1px solid #E3E5E7;
+$dropdown-separator:          $dropdown-border;
+
+$dropdown-item-bg-hover:      rgba(0,0,0,.05);
+
+
+
+
+//
+//  TAGGING COMPONENT
+//
+
+$tagging-bg:             #b3e5fc;
+$tagging-wrapper-bg:     white;
+
+
+
+
+//
+//  DIALOG COMPONENT
+//
+
+$dialog-bg:              white;
+$dialog-border:          1px solid #C0C0C0;
+
+$dialog-header-bg:       #111;
+$dialog-header-color:    white;
+
+$dialog-close:           #888;
+$dialog-close-hover:     white;
+
+$dialog-footer-bg:       #F6F6F6;
+
+
+
+
+//
+//  FORMS
+//
+
+$input-color:            $color-text;
+$input-bg:               white;
+$input-border:           1px solid $color-light;
+$input-border-focus:     $color-primary;
+
+$form-error-color:       $color-danger;
+
+$required-sign-color:    $color-danger;
+
+
+
+
+//
+//  LANDING / LOGIN AREA
+//
+
+$landing-content-color:       white;
+$landing-content-bg:          rgba(0,0,0,.4);
+
+$landing-action-bg:           white;
+$landing-action-border:       1px solid rgba(0,0,0,.08);
+
+
+
+
+//
+//  PHOTOS / ALBUMS
+//
+
+$photo-item-overlay:     rgba(0,0,0,.4);
+
+$photo-item-bg:          rgba(0,0,0,.05);
+$photo-item-border:      rgba(0,0,0,.025);
+
+
+
+
+//
+//  MEMBERS
+//
+
+$member-item-bg:                #f9f9f9;
+$member-item-border:            1px solid rgba(0,0,0,.05);
+
+$member-online-color:           $color-success;
+
+
+
+
+//
+//  GROUPS
+//
+
+$group-item-bg:                 #f9f9f9;
+
+
+
+
+//
+//  MESSAGES
+//
+
+$message-item-bg:               rgba(0,0,0,.01);
+
+$message-unread-color:          inherit;
+$message-unread-bg:             lighten($color-primary, 45%);
+
+$typing-indicator-color:        $color-link;
+$typing-indicator-bg:           #ECF0F1;
+
+
+
+
+//
+//  CHAT PLUGIN
+//
+
+$chat-window-bg:                   rgb(236, 240, 241);
+
+$chat-window-border:               1px solid #ddd;
+
+$chat-window-header-color:         white;
+$chat-window-header-bg:            #A8AAB1;
+$chat-window-header-bg-hover:      #93949B;
+$chat-window-header-bg-active:     #5E6271;
+$chat-window-header-shadow:        inset 0 0 0 1px rgba(0,0,0,.1);
+
+$chat-sidebar-item-color:          black;
+
+$chat-input-color:                 $color-text;
+$chat-input-bg:                    white;
+$chat-input-border:                #ddd;
+
+//  Conversation
+
+$conversation-name-color:          black;
+
+$conversation-link-color:          $color-link;
+$conversation-link-hover:          $color-link-hover;
+
+$conversation-msg-color:           $color-text;
+$conversation-msg-bg:              white;
+
+$conversation-my-msg-color:        #3F4248;
+$conversation-my-msg-bg:           #D7DBE4;
+
+
+
+
+//
+//  PAGE
+//
+
+$page-bg:                      white;
+$page-border:                  1px solid rgba(0,0,0,.1);
+
+$page-title-color:             $color-text;
+$page-title-font-size:         $font-size-md;
+$page-title-line-height:       $line-height-md;
+
+$page-half-bg:                 #F6F6F6;
+
+$page-legend-bg:               rgba(0,0,0,.03);
+
+
+
+
+//
+//  MEDIA
+//
+
+$media-bg:                         rgba(0, 0, 0,.04);
+
+$media-body-color:                 $color-text;
+$media-body-bg:                    rgba(0, 0, 0,.04);
+
+$media-counter-color:              white;
+$media-counter-bg:                 rgba(0,0,0,.4);
+$media-counter-bg-hover:           rgba(0,0,0,.5);
+$media-counter-border:             3px solid rgba(255,255,255,.4);
+$media-counter-border-hover:       3px solid rgba(255,255,255,.6);
+
+$media-photo-border:               white;
+
+
+
+
+//
+//  UTILITY
+//
+
+//  Avatar
+
+$avatar-border-color:    white;
+
+//  Divider
+
+$divider:                1px solid rgba(0,0,0,.08);
+$divider-dashed:         1px dashed rgba(0,0,0,.1);
+$divider-dashed-md:      2px dashed rgba(0,0,0,.1);
+
+//  Content wrapper
+
+$content-wrap-bg:        white;
+
+//  Notification counter
+
+$notif-counter-color:    white;
+$notif-counter-bg:       $color-danger;
+$notif-counter-border:   ($border-radius / 1.5);
+
+//  Lightbox
+
+$lightbox-bg:            white;
+
+$lightbox-icon-color:    rgba(0,0,0,.6);
+
+//  Column list
+
+$column-list-color-hover:           rgba(0,0,0,.05);
+
+//  Progress bar
+
+$progress-bg:            #fff;
+$progress-bar-bg:        rgba(0,0,0,.15);
+$progress-bar-bg-fill:   $color-success;
+
+//  Accordion
+
+$accordion-bg:           #F5F7F7;
+$accordion-bg-active:    lighten($accordion-bg, 2%);

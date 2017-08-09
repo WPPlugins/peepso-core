@@ -1,0 +1,31 @@
+//
+//  BOX COMPONENT
+//
+
+
+
+.ps-box {
+  width: 100%;
+  margin-bottom: $padding-base;
+  padding: $padding-sm $padding-base;
+  background-color: $member-item-bg;
+
+  @extend %flex;
+  
+  align-items: center;
+}
+
+
+.ps-box__body {
+  flex-grow: 1;
+}
+
+
+.ps-box__actions {
+  padding-left: $padding-base;
+  text-align: right;
+  flex-grow: 1;
+}
+
+
+.ps-box--message {}

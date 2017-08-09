@@ -1,0 +1,42 @@
+//
+//  TOOLTIP COMPONENT
+//
+//  Tooltip is based on CSS only and show content from title="" tag.
+
+
+
+.ps-tooltip {
+  position: relative;
+
+  &:hover {
+    &:before {
+      position: absolute;
+      left: 50%;
+      bottom: 20px;
+      border: solid;
+      border-color: rgba(0,0,0, .8) transparent;
+      border-width: 6px 6px 0 6px;
+      content: '';
+
+      @include media('small') {
+        display: none;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      right: 0;
+      bottom: 100%;
+      padding: $padding-sm;
+      background-color: rgba(0,0,0, .8);
+      white-space: nowrap;
+      content: attr(title);
+
+      @extend %radius--sm;
+
+      @include media('small') {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,300 @@
+//
+//  STREAM STRUCTURE
+//
+
+
+
+.ps-stream-container {
+  margin-bottom: $padding-base;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.ps-stream {
+  position: relative;
+  margin-bottom: $padding-base;
+  background-color: $stream-post-bg;
+  border: $stream-post-border;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @extend %clearfix;
+}
+
+
+.ps-stream-header {
+  display: table;
+  width: 100%;
+  padding: $padding-base;
+}
+
+
+.ps-stream-meta {
+  display: table-cell;
+  vertical-align: middle;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  color: $stream-post-meta-color;
+
+  @if $scss-direction == rtl {
+    padding-right: $padding-sm;
+  } @else {
+    padding-left: $padding-sm;
+  }
+
+  .ps-icon-map-marker {
+    margin-left: -5px;
+  }
+
+  span > a {
+    display: inline-block;
+  }
+
+  @include media('small') {
+    span:nth-child(2) {
+      display: block;
+    }
+  }
+}
+
+
+.ps-stream-options {
+  display: table-cell;
+  width: 45px;
+  vertical-align: top;
+
+  @if $scss-direction == rtl {
+    text-align: left;
+  } @else {
+    text-align: right;
+  }
+
+  a {
+    padding-bottom: $padding-sm;
+
+    @if $scss-direction == rtl {
+      padding-right: $padding-sm;
+    } @else {
+      padding-left: $padding-sm;
+    }
+  }
+
+  .ps-dropdown-menu {
+    top: 25px;
+
+    @if $scss-direction == rtl {
+      left: -14px;
+      right: auto;
+    } @else {
+      left: auto;
+      right: -14px;
+    }
+  }
+
+  @include media('medium') {
+    width: 60px;
+  }
+}
+
+
+.ps-stream-user {
+  font-weight: bold;
+}
+
+
+.ps-stream-time {
+  color: $stream-post-time-color;
+  vertical-align: middle;
+
+  a {
+    color: $stream-post-time-color;
+
+    &:hover,
+    &:focus {
+      color: darken($stream-post-time-color, 8%);
+    }
+  }
+
+  .ps-icon {
+    height: 10px;
+  }
+}
+
+
+.ps-stream-body {
+  padding-left: $padding-base;
+  padding-right: $padding-base;
+  padding-bottom: $padding-base;
+  color: $stream-post-color;
+
+  a {
+    word-break: break-all;
+    word-wrap: break-word;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: $padding-sm;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+.ps-stream-attachment {
+  margin-bottom: $padding-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:empty {
+    margin-bottom: 0;
+  }
+}
+
+
+.ps-stream-attachment,
+.ps-stream-attachments {
+  p {
+    padding: 0;
+    margin-bottom: $padding-sm !important;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+.ps-stream-quote {
+  padding: $padding-base;
+  border-left: $stream-quote-border;
+  color: $stream-quote-color;
+  word-break: break-word;
+
+  p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+.ps-stream-actions {
+  padding-left: $padding-base;
+  padding-right: $padding-base;
+  padding-bottom: $padding-sm;
+
+  a {
+    font-size: $font-size-sm;
+    opacity: 0.75;
+
+    @if $scss-direction == rtl {
+      margin-left: $padding-sm;
+    } @else {
+      margin-right: $padding-sm;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+
+    &:last-child {
+      @if $scss-direction == rtl {
+        margin-left: 0;
+      } @else {
+        margin-right: 0;
+      }
+    }
+  }
+
+  span {
+    display: none;
+  }
+
+  &:empty {
+    display: none;
+    padding: 0;
+  }
+
+  @include media('medium') {
+    span {
+      display: inline-block;
+    }
+  }
+}
+
+
+.ps-stream-status {
+  padding: $padding-sm $padding-base;
+  background-color: $stream-post-status-bg;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+
+  &:empty {
+    padding: 0;
+  }
+}
+
+
+.ps-stream-post-more {
+  display: inline-block;
+}
+
+
+.liked {
+  position: relative;
+  font-weight: bold;
+  opacity: 1 !important;
+}
+
+
+.ps-stream__post-alert {
+  &+ .ps-stream__post-pin {
+    top: 35px;
+
+    @include media('small') {
+      top: 53px;
+    }
+  }
+}
+
+
+.ps-stream__post-pin {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  display: none;
+  width: 120px;
+  height: 120px;
+  overflow: hidden;
+
+  > span {
+    position: absolute;
+    top: 20px;
+    right: -25px;
+    width: 130px;
+    padding: 5px;
+    transform: rotate(40deg);
+    color: $stream-post-pin-color;
+    background: $stream-post-pin-bg;
+    text-align: center;
+  }
+}
+
+
+.ps-stream__post--pinned {}

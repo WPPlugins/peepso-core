@@ -1,0 +1,35 @@
+//
+//  WIDGET: MEMBERS
+//  Usage: Latest members / Online members
+//
+
+
+
+//
+//  Widget modifier, used for member widgets which
+//  has user avatar and online status
+//
+.ps-widget--members {
+  > ul > li {
+  position: relative;
+
+    > span {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+    }
+  }
+}
+
+
+//
+//  A members widget wrapper
+//
+.ps-widget--members__wrapper {}
+
+
+.ps-widget--members__count {
+  display: block;
+  margin-top: $padding-sm;
+  font-size: $font-size-sm;
+}

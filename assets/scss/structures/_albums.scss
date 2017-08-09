@@ -1,0 +1,176 @@
+//
+//  STRUCTURE: ALBUMS
+//
+
+
+
+//
+//  Wrapping a list of albums
+//
+.ps-albums {
+  @extend %photos;
+}
+
+
+//
+//  A album item, wrapping photo with
+//  details
+//
+.ps-albums__item {
+  @extend %photo__item;
+
+  background-color: $photo-item-bg;
+
+  > a {
+    position: relative;
+  }
+}
+
+
+//
+//  A album item, wrapping photo with
+//  details
+//
+.ps-albums__item-wrapper {
+  @extend %photo__wrapper;
+}
+
+
+//
+//  Album overlay
+//
+.ps-albums__item-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background-color: rgba(0,0,0,.65);
+}
+
+
+//
+//  Wrapping a album title
+//
+.ps-albums__item-title {
+  padding: ($padding-sm / 2);
+  font-size: $font-size-sm;
+  line-height: $line-height-base;
+  color: #fff;
+}
+
+
+//
+//  Wrapping album details, like number
+//  of photo and permissions
+//
+.ps-albums__item-details {
+  position: relative;
+  padding-left: ($padding-sm / 2);
+  padding-right: 30px;
+  padding-bottom: ($padding-sm / 2);
+  font-size: $font-size-sm;
+  line-height: 1;
+  color: $color-muted;
+}
+
+
+//
+//  Wrapping permissions icon which
+//  indicates a status
+//
+.ps-albums__item-status {
+  position: absolute;
+  top: 0;
+  right: 2px;
+}
+
+
+.ps-album {}
+
+
+.ps-album__name {}
+
+
+.ps-album__name-edit {
+  @extend %clearfix;
+}
+
+
+.ps-album__edit-wrapper {
+  float: left;
+  width: 50%;
+
+  &:first-child {
+    width: 100%;
+  }
+
+  .ps-btn,
+  .ps-input {
+    width: 100%;
+  }
+
+  @include media('medium') {
+    width: 20%;
+    padding-right: $padding-sm;
+
+    &:first-child {
+      width: 60%;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+
+.ps-album__description {
+  position: relative;
+  margin-bottom: $padding-base;
+  line-height: $line-height-base;
+}
+
+
+.ps-album__description-title {
+  margin-bottom: $padding-sm;
+  padding-bottom: $padding-sm;
+  border-bottom: $divider;
+
+  > a {
+    [class^="ps-icon-"] {
+      line-height: 1.2em;
+      vertical-align: top;
+    }
+
+    &:before {
+      display: inline-block;
+      content: " \00b7";
+    }
+  }
+}
+
+
+.ps-album__description-edit {
+  text-align: right;
+
+  > .ps-textarea {
+    margin-bottom: $padding-sm;
+  }
+}
+
+
+.ps-album__description-privacy {
+  position: relative;
+  display: inline-block;
+
+  [class^="ps-icon-"] {
+    line-height: 1.2em;
+    vertical-align: top;
+  }
+
+  > a:before {
+    display: inline-block;
+    content: " \00b7";
+  }
+}

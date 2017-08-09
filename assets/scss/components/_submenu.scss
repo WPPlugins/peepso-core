@@ -1,0 +1,39 @@
+//
+//  SUBMENU COMPONENT
+//
+
+
+
+.ps-submenu {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 13px;
+  line-height: 1;
+  background-color: $submenu-bg;
+}
+
+
+.ps-submenu__item {
+  display: block;
+  flex-grow: 1;
+  padding: $padd;
+  text-align: center;
+
+  &.current {
+    font-weight: bold;
+    background-color: $submenu-link-bg--current;
+  }
+
+  @include media('medium') {
+    @if $scss-direction == rtl {
+      border-left: $submenu-separator;
+    } @else {
+      border-right: $submenu-separator;
+    }
+
+    &:last-child {
+      border-left: none;
+      border-right: none;
+    }
+  }
+}

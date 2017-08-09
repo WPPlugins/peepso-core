@@ -1,0 +1,92 @@
+//
+//  NOTIFICATIONS
+//
+
+
+
+.ps-notifications {}
+
+
+.ps-notification__wrapper {
+  // Replace with the new class in 1.8.3
+  .ps-comment-item {
+    padding: $padding-sm $padding-base;
+  }
+}
+
+
+.ps-notification {
+  border-bottom: $divider;
+
+  small {
+    font-size: $font-size-xs;
+  }
+}
+
+
+.ps-notification__inside {
+  display: flex;
+  align-items: center;
+  padding: $padd;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+
+.ps-notification__check {
+  position: relative;
+}
+
+
+.ps-notification__header {}
+
+
+.ps-notification__body {
+  @if $scss-direction == rtl {
+    padding-right: $padd;
+  } @else {
+    padding-left: $padd;
+  }
+}
+
+
+.ps-notification__title {
+  font-weight: bold;
+}
+
+
+.ps-notification__desc {}
+
+
+.ps-notification__meta {
+  color: $color-text-light;
+}
+
+
+.ps-notification--unread {
+  background-color: $message-unread-bg;
+}
+
+
+//
+//  Improve styling on WP Admin bar
+//
+#wpadminbar {
+  .ps-notification {
+    @extend .ps-notification;
+
+    img {
+      max-width: 100%;
+    }
+  }
+
+  a.ps-notification__inside {
+    @extend .ps-notification__inside;
+
+    height: auto;
+  }
+
+  .ps-notification__body {
+    @extend .ps-notification__body;
+  }
+}

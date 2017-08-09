@@ -1,0 +1,142 @@
+//
+//  WIDGET: PROFILE
+//
+
+
+
+//
+//  Widget modifier, used for profile widget which
+//  has user details and menu links
+//
+.ps-widget--profile {
+  font-size: $font-size-sm;
+
+  @extend %form-checkbox;
+}
+
+
+//
+//  A profile widget wrapper
+//
+.ps-widget--profile__wrapper {}
+
+
+//
+//  A header inside profile widget, wrapping
+//  user avatar, full name and preferences link
+//
+.ps-widget--profile__header {
+  display: table;
+  width: 100%;
+  margin-bottom: $padding-sm;
+
+  .ps-user-name {
+    font-size: $font-size-md;
+    line-height: $line-height-base;
+  }
+}
+
+
+.ps-widget--profile__avatar {
+  display: table-cell;
+  width: 64px;
+}
+
+
+.ps-widget--profile__details {
+  display: table-cell;
+  vertical-align: middle;
+
+  @if $scss-direction == rtl {
+    padding-right: $padding-sm;
+  } @else {
+    padding-left: $padding-sm;
+  }
+
+  > a {
+    display: block;
+
+    > small {
+      font-size: $font-size-sm;
+      line-height: $line-height-base;
+    }
+  }
+}
+
+
+//
+//  Small bar with notifications
+//
+.ps-widget--profile__notifications {
+  display: flex;
+  margin-top: 4px;
+
+  > a {
+    position: relative;
+    display: block;
+    padding: 2px 8px;
+    font-size: $font-size-base;
+    background-color: transparent;
+    outline: none;
+
+    @if $scss-direction == rtl {
+      border-left: $divider;
+    } @else {
+      border-right: $divider;
+    }
+
+    &:hover,
+    &:focus {
+      //background-color: rgba(0,0,0, .025);
+    }
+
+    &:first-child {
+      @if $scss-direction == rtl {
+        padding-right: 0;
+      } @else {
+        padding-left: 0;
+      }
+    }
+
+    &:last-child {
+      @if $scss-direction == rtl {
+        border-left: none;
+      } @else {
+        border-right: none;
+      }
+    }
+  }
+
+  .ps-notification-counter {
+    top: 0;
+
+    @if $scss-direction == rtl {
+      left: 1px;
+      right: auto;
+    } @else {
+      right: 1px;
+    }
+  }
+}
+
+
+.ps-widget--profile__title {
+  display: block;
+  margin-top: $padding-base;
+  margin-bottom: ($padding-sm / 2);
+  font-size: $font-size-base;
+}
+
+
+.ps-widget--profile__menu {
+  > a {
+    display: block;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    line-height: 1.2;
+  }
+
+  .ps-link--logout {
+    margin-top: $padding-sm;
+  }
+}

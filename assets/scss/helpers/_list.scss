@@ -1,0 +1,65 @@
+//
+//  HELPER: LISTS
+//  Created for photos list
+//
+
+
+
+//
+//  Helper prepared for list wrappers
+//
+%list {
+  @extend %clearfix;
+
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+
+  > li {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+
+//
+//  List modifier helper displaying items inline
+//
+%list--inline {
+  @extend %list;
+
+  > li {
+    display: block;
+    float: left;
+
+    @if $scss-direction == rtl {
+      float: right;
+    } @else {
+      float: left;
+    }
+  }
+
+  &:after {
+    content: " ";
+    display: table;
+    clear: both;
+  }
+}
+
+
+//
+//  List modifier helper displaying items inline
+//  and taking 100% of available width
+//
+%list--inline-fluid {
+  width: 100%;
+  display: table;
+
+  @extend %list;
+
+  > li {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}

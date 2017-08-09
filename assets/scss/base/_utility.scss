@@ -1,0 +1,230 @@
+//
+//  UTILITY
+//
+
+
+
+//
+//  Resets floated elements
+//
+.clearfix {
+  @extend %clearfix;
+}
+
+
+.ps-scroll {
+  line-height: 0;
+  text-align: center;
+}
+
+
+.ps-emoticon {
+  #wpadminbar & {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+
+.ps-content-wrapper {
+  padding: 0;
+  background-color: $content-wrap-bg;
+
+  @extend %clearfix;
+}
+
+
+.ps-padding {
+  padding: $padding-base;
+}
+
+
+.ps-left {
+  @if $scss-direction == rtl {
+    float: right !important;
+  } @else {
+    float: left !important;
+  }
+}
+
+
+.ps-right {
+  @if $scss-direction == rtl {
+    float: left !important;
+  } @else {
+    float: right !important;
+  }
+}
+
+
+.ps-gap {
+  padding-top: $padding-sm;
+  padding-bottom: $padding-sm;
+}
+
+
+.reset-gap {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+
+.hidden {
+  display: none !important;
+}
+
+
+.block {
+  display: block;
+}
+
+
+.ps-hidden-mobile {
+  @include media('small') {
+    display: none !important;
+  }
+}
+
+
+.ps-full {
+  width: 100% !important;
+}
+
+
+.ps-full-mobile {
+  @include media('xsmall') {
+    width: 100% !important;
+  }
+}
+
+
+.ps-half {
+  width: 50%;
+}
+
+
+.ps-notification-counter {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  padding: 1px 2px;
+  border-radius: $notif-counter-border;
+  background-color: $notif-counter-bg;
+  color: $notif-counter-color;
+  font-size: 9px;
+  line-height: 10px;
+
+  @if $scss-direction == rtl {
+    left: 4px;
+    right: auto;
+  } @else {
+    right: 4px;
+  }
+
+  #wpadminbar & {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+    padding: 1px 2px;
+    border-radius: $notif-counter-border;
+    background-color: $notif-counter-bg;
+    color: $notif-counter-color;
+    font-size: 9px;
+    line-height: 10px;
+  }
+}
+
+
+.ps-loading-image,
+.ps-loading {
+  @extend %clearfix;
+
+  text-align: center;
+}
+
+
+.ps-spinner {
+  margin: 0 auto;
+  width: 70px;
+  text-align: center;
+
+  > div {
+    width: 14px;
+    height: 14px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: psAnimSpinner 1.4s infinite ease-in-out both;
+            animation: psAnimSpinner 1.4s infinite ease-in-out both;
+  }
+
+  .ps-spinner-bounce1 {
+    -webkit-animation-delay: -0.32s;
+            animation-delay: -0.32s;
+  }
+
+  .ps-spinner-bounce2 {
+    -webkit-animation-delay: -0.16s;
+            animation-delay: -0.16s;
+  }
+}
+
+
+@-webkit-keyframes psAnimSpinner {
+  0%, 80%, 100% { -webkit-transform: scale(0) }
+  40% { -webkit-transform: scale(1.0) }
+}
+
+
+@keyframes psAnimSpinner {
+  0%, 80%, 100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  } 40% {
+    -webkit-transform: scale(1.0);
+            transform: scale(1.0);
+  }
+}
+
+
+.ps-icon-edit {
+  cursor: pointer;
+}
+
+
+/*  Datepicker max-width fix for Twenty Fifteen theme */
+.datepicker-dropdown {
+  max-width: 220px;
+}
+
+
+.ps-lightbox {
+  @extend %reset;
+}
+
+
+.ps-lightbox-data {
+  background-color: $lightbox-bg !important;
+}
+
+
+.ps-lightbox-close {
+  color: $lightbox-icon-color;
+}
+
+
+/*  Profile privacy  */
+.ps-profile-privacy--disabled {
+  display: inline-block;
+  padding: $btn-sm-padding;
+  font-size: $btn-sm-font-size;
+  line-height: $btn-sm-line-height;
+  color: $color-muted;
+  border: 1px solid transparent;
+  cursor: not-allowed;
+
+  > [class^="ps-icon-"] {
+    line-height: 1.2em;
+    vertical-align: top;
+  }
+}

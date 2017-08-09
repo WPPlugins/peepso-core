@@ -1,0 +1,34 @@
+//
+//  HELPER: RADIUS
+//
+
+
+
+%radius {
+  -webkit-border-radius: $border-radius;
+  -moz-border-radius: $border-radius;
+  -o-border-radius: $border-radius;
+  border-radius: $border-radius;
+}
+
+
+%radius--sm {
+  -webkit-border-radius: $border-radius-sm;
+  -moz-border-radius: $border-radius-sm;
+  -o-border-radius: $border-radius-sm;
+  border-radius: $border-radius-sm;
+}
+
+
+//
+//  Reset border radius and
+//  prevent it from override
+//
+%radius--reset {
+   -webkit-appearance: none;
+   -moz-appearance:    none;
+   appearance:         none;
+   -webkit-border-radius: 0 !important;
+   -moz-border-radius: 0 !important;
+   border-radius: 0 !important;
+}

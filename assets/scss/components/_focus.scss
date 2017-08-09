@@ -1,0 +1,404 @@
+//
+//  FOCUS AREA
+//
+
+
+
+.ps-focus {
+  position: relative;
+  margin-bottom: $padding-base;
+  background-color: $focus-bg;
+}
+
+
+.ps-focus-cover {
+  position: relative;
+
+  &:before {
+    display: block;
+    content: '';
+    height: 0;
+    padding-top: 66.5%;
+  }
+
+  @include media('medium') {
+    &:before {
+      display: block;
+      content: '';
+      height: 0;
+      padding-top: 37.5%;
+    }
+  }
+}
+
+
+.ps-focus-cover-edit {
+  .ps-avatar-focus {
+    z-index: 2;
+    display: block;
+  }
+
+  .ps-focus-title {
+    position: absolute;
+    z-index: 2;
+    left: 114px;
+    bottom: 14px;
+    text-shadow: 0 0 3px rgba(0,0,0,1);
+  }
+
+  .ps-focus-image {
+    z-index: 1;
+  }
+}
+
+
+.ps-focus-mini {
+  .ps-focus-cover:before {
+    padding-top: 92px;
+
+    @include media('medium') {
+      padding-top: 128px;
+    }
+  }
+}
+
+
+.ps-focus-options {
+  position: absolute;
+  top: $padding-base;
+
+  @if $scss-direction == rtl {
+    left: $padding-base;
+  } @else {
+    right: $padding-base;
+  }
+
+  > a {
+    display: block;
+    padding: 7.5px 5px;
+    color: $focus-opt-icon-color !important;
+    font-size: 16px;
+    line-height: 16px;
+    text-shadow: 0 0 4px black;
+
+    &:hover, &:focus {
+      color: white !important;
+    }
+  }
+
+  .ps-icon {
+    fill: white;
+  }
+}
+
+
+.ps-focus-change {
+  position: absolute;
+  z-index: map-get($zindex, base);
+  bottom: $padding-base;
+
+  @if $scss-direction == rtl {
+    left: $padding-base;
+  } @else {
+    right: $padding-base;
+  }
+}
+
+
+.ps-focus-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  @include media('medium') {
+    display: block;
+  }
+}
+
+
+.ps-focus-image-mobile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover !important;
+
+  @include media('medium') {
+    display: none;
+  }
+}
+
+
+.ps-focus-header {
+  position: absolute;
+  left: 0;
+  right: 0.1px;
+  bottom: 0;
+  display: table;
+  width: 100%;
+  padding: $padding-base;
+
+  /*  Gradient shadow behind name on cover photo  */
+  background: -moz-linear-gradient(top,  rgba(0,0,0,0) 40%, rgba(0,0,0,0.65) 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(40%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.65) 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.65) 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.65) 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  rgba(0,0,0,0) 40%,rgba(0,0,0,0.65) 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#a6000000',GradientType=0 ); /* IE6-9 */
+}
+
+
+.ps-focus-title {
+  position: relative;
+  display: table-cell;
+  vertical-align: bottom;
+
+  @if $scss-direction == rtl {
+    padding-right: $padding-base;
+  } @else {
+    padding-left: $padding-base;
+  }
+
+  /*  Wrapping user-name and online indicator  */
+  > span {
+    display: inline-block;
+    margin-top: ($padding-sm / 1.5);
+    margin-bottom: 0;
+    color: white;
+    font-size: 20px;
+    line-height: 20px;
+    text-shadow: 0 0 4px black;
+    vertical-align: middle;
+
+    .ps-focus--group & {
+      margin-bottom: $padding-base;
+    }
+
+    /*  Showing online indicator before user-name on focus area */
+    > span {
+      font-size: $font-size-base;
+      color: $member-online-color;
+      vertical-align: bottom;
+    }
+
+    @include media('medium') {
+      font-size: $font-size-lg;
+      line-height: $font-size-lg;
+    }
+  }
+}
+
+
+.ps-focus-actions {
+  position: absolute;
+  bottom: $padding-base;
+  display: none;
+
+  @if $scss-direction == rtl {
+    left: $padding-base;
+  } @else {
+    right: $padding-base;
+  }
+
+  .ps-btn-small {
+    vertical-align: middle;
+  }
+
+  @include media('large') {
+    display: table-cell;
+  }
+}
+
+
+.ps-focus-actions-mobile {
+  position: relative;
+  display: table;
+  width: 100%;
+  border-bottom: $focus-separator;
+  border-spacing: $padding-base;
+  text-align: center;
+
+  a {
+    display: table-cell;
+  }
+
+  .ps-btn-small {
+    vertical-align: middle;
+  }
+
+  .ps-dropdown-menu {
+    width: 100%;
+  }
+
+  @include media('large') {
+    display: none;
+  }
+}
+
+
+.ps-focus-about {
+  @extend %clearfix;
+}
+
+
+.ps-reposition-cover {
+  display: none;
+
+  @include media('medium') {
+    display: block;
+  }
+
+  .ps-touch &,
+  .ps-mobile & {
+    display: none;
+  }
+}
+
+
+.ps-focus__details {
+  @extend %list--inline;
+
+  color: #fff;
+  text-shadow: 0 0 4px black;
+
+  > li {
+    @if $scss-direction == rtl {
+      margin-left: $padding-sm;
+    } @else {
+      margin-right: $padding-sm;
+    }
+
+    a {
+      color: #fff;
+
+      &:hover,
+      &:focus {
+        color: #fff;
+      }
+    }
+
+    &:last-child {
+      @if $scss-direction == rtl {
+        margin-left: 0;
+      } @else {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+
+/*  Wrapping cog button with profile options - dropdown menu  */
+.ps-focus-profile-options {
+  display: table-cell;
+  vertical-align: middle;
+
+  @include media('medium') {
+    display: inline-block;
+  }
+}
+
+
+//
+//  FOCUS FOOTER
+//  Wrapping actions area under Profile cover image
+//
+
+
+.ps-focus__footer {
+  font-size: 13px;
+  line-height: 1;
+  background-color: $focus-bg;
+
+  @include media('medium') {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+
+.ps-focus__menu {
+  display: flex;
+}
+
+
+.ps-focus__menu-item {
+  display: block;
+  padding-top: $padd;
+  padding-bottom: $padd;
+  text-align: center;
+
+  @if $scss-direction == rtl {
+    border-left: $focus-separator;
+  } @else {
+    border-right: $focus-separator;
+  }
+
+  &.current {
+    font-weight: bold;
+    background-color: $focus-link-bg--current;
+  }
+
+  > span {
+    white-space: nowrap;
+  }
+
+  @include media('small') {
+    flex-grow: 1;
+
+    > span {
+      display: none;
+    }
+
+    &:last-of-type {
+      border-left: none;
+      border-right: none;
+    }
+  }
+
+  @include media('medium') {
+    padding: $padd;
+
+    > i {
+      display: none;
+    }
+  }
+}
+
+
+.ps-focus__interactions {
+  display: flex;
+  color: $focus-color;
+
+  @include media('small') {
+    background-color: $focus-interactions-bg;
+    border-left: $focus-border;
+    border-right: $focus-border;
+    border-bottom: $focus-border;
+  }
+}
+
+
+.ps-focus__interactions-item {
+  display: block;
+  padding: $padd;
+  text-align: center;
+  white-space: nowrap;
+
+  @include media('small') {
+    flex-grow: 1;
+  }
+}

@@ -1,0 +1,184 @@
+//
+//  BUTTON COMPONENT
+//
+//  "!important" property was used to avoid override by most popular
+//  Wordpress themes.
+
+
+
+.ps-btn {
+  display: inline-block;
+  width: auto;
+  padding: $btn-padding !important;
+  margin: 0;
+  background: $btn-bg !important;
+  border: $btn-border !important;
+  color: $btn-color !important;
+  font-size: $btn-font-size;
+  font-weight: normal;
+  line-height: $btn-line-height;
+  text-align: center;
+  text-decoration: none !important;
+  text-transform: none !important;
+  text-shadow: none !important;
+  box-shadow: none !important;
+  word-wrap: normal;
+  -moz-hyphens: none;
+  cursor: pointer;
+
+  @extend %radius--reset;
+
+  &:hover,
+  &:focus,
+  &.active {
+    padding: $btn-padding !important;
+    background: $btn-bg-hover !important;
+    color: $btn-color-hover !important;
+    text-decoration: none;
+    text-shadow: none !important;
+    box-shadow: none !important;
+  }
+
+  > [class^="ps-icon-"] {
+    line-height: 1.334em;
+    vertical-align: top;
+  }
+
+  &-primary {
+    @include button-variant(#fff, $btn-primary);
+  }
+
+  &-success {
+    @include button-variant(#fff, $btn-success);
+  }
+
+  &-warning {
+    @include button-variant(#fff, $btn-warning);
+  }
+
+  &-danger {
+    @include button-variant(#fff, $btn-danger);
+  }
+
+  &:disabled {
+    background: darken($btn-bg, 10%) !important;
+    border: $btn-border !important;
+    color: $btn-color !important;
+    cursor: not-allowed;
+    opacity: .6;
+
+    &:hover {
+      background: darken($btn-bg, 10%) !important;
+      border: $btn-border !important;
+      color: $btn-color !important;
+      cursor: not-allowed;
+      opacity: .6;
+    }
+  }
+
+  #wpadminbar & {
+    line-height: $btn-line-height !important;
+  }
+}
+
+
+.ps-btn--mini,
+.ps-btn--mini:hover,
+.ps-btn--mini:focus {
+  padding: 2px 4px !important;
+  font-size: $font-size-xs;
+  line-height: $line-height-sm;
+}
+
+
+.ps-btn-login {
+  padding: $btn-padding !important;
+
+  &:hover,
+  &:focus,
+  &.active {
+    padding: $btn-padding !important;
+  }
+}
+
+
+.ps-btn-link {
+  display: inline-block;
+  padding: $btn-padding;
+  border: 1px solid transparent;
+  font-size: $btn-font-size;
+  line-height: $btn-line-height;
+  text-align: center;
+}
+
+
+.ps-btn-small,
+.ps-btn--small {
+  padding: $btn-sm-padding !important;
+  font-size: $btn-sm-font-size;
+  line-height: $btn-sm-line-height;
+
+  &:hover,
+  &:focus,
+  &.active {
+    padding: $btn-sm-padding !important;
+  }
+}
+
+
+.ps-btn-full {
+  width: 100%;
+}
+
+
+.ps-btn-more {
+  width: 100%;
+  margin-top: $padding-base;
+}
+
+
+.ps-btn-login {
+  @include button-variant(#fff, $color-primary);
+}
+
+
+.ps-button-action {
+  @include button-variant(#fff, $color-primary);
+
+  @if $scss-direction == rtl {
+    float: right;
+    margin-left: 3px;
+
+    .ps-comment-actions &,
+    .ps-popover-actions & {
+      float: none;
+      margin-left: 0;
+    }
+  }
+}
+
+
+.ps-button-cancel {
+  @if $scss-direction == rtl {
+    .ps-comment-actions &,
+    .ps-popover-actions & {
+      float: left;
+      margin-right: 3px;
+    }
+  }
+}
+
+
+.ps-btn-join {
+  padding: $btn-md-padding;
+  font-size: $btn-md-font-size;
+  line-height: $btn-md-line-height;
+
+  @include button-variant(#fff, $color-success);
+}
+
+
+.ps-btn--postbox {
+  height: 100%;
+  font-size: 12px;
+}

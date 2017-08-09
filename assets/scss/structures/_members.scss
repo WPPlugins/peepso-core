@@ -1,0 +1,183 @@
+//
+//  MEMBERS STRUCTURE
+//
+
+
+
+.ps-members {
+  @extend %clearfix;
+
+  text-align: center;
+}
+
+
+.ps-members-list {
+  @extend %ps-list;
+}
+
+
+.ps-members-item {
+  position: relative;
+  display: table;
+  width: 100%;
+  border: $member-item-border;
+  background-color: $member-item-bg;
+
+  @if $scss-direction == rtl {
+    text-align: right;
+  } @else {
+    text-align: left;
+  }
+}
+
+
+.ps-members-item-wrapper {
+  margin-bottom: 2%;
+
+  @include media('medium') {
+    width: 50%;
+
+    @if $scss-direction == rtl {
+      float: right;
+    } @else {
+      float: left;
+    }
+
+    &:first-child,
+    &:nth-child(2n+1) {
+      @if $scss-direction == rtl {
+        padding-left: $padding-sm;
+      } @else {
+        padding-right: $padding-sm;
+      }
+    }
+
+    &:nth-child(2n) {
+      @if $scss-direction == rtl {
+        padding-right: $padding-sm;
+      } @else {
+        padding-left: $padding-sm;
+      }
+    }
+  }
+
+  .ps-members-item-popup & {
+    float: none;
+    width: auto;
+
+    &:first-child,
+    &:nth-child(2n+1) {
+      padding-right: 0;
+    }
+
+    &:nth-child(2n) {
+      padding-left: 0;
+    }
+  }
+}
+
+
+.ps-members-item-avatar {
+  position: relative;
+  display: table-cell;
+  padding: $padding-sm;
+  vertical-align: top;
+
+  .ps-avatar {
+    width: 64px;
+  }
+}
+
+
+.ps-members-item-body {
+  display: table-cell;
+  width: 100%;
+  padding-top: $padding-sm;
+  padding-bottom: 20px;
+  max-width: 30px;
+
+  @if $scss-direction == rtl {
+    padding-left: 35px;
+  } @else {
+    padding-right: 35px;
+  }
+
+  a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+
+.ps-members-item-title {
+  display: block;
+  margin-top: ($padding-sm / 2);
+  margin-bottom: $padding-sm;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+}
+
+
+.ps-members-item-status {
+  display: block;
+  color: $color-text-light;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+
+.ps-members-item-options,
+.ps-members-item-buttons {
+  position: absolute;
+  bottom: 4px;
+  line-height: 0;
+
+  @if $scss-direction == rtl {
+    left: 4px;
+  } @else {
+    right: 4px;
+  }
+
+  .ps-btn {
+    padding: 4px !important;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm !important;
+
+    &:hover,
+    &:focus {
+      padding: 4px !important;
+    }
+  }
+  .ps-dropdown-menu {
+    @if $scss-direction == rtl {
+      left: 0;
+      right: auto;
+    } @else {
+      left: auto;
+      right: 0;
+    }
+  }
+}
+
+
+.ps-members-item-options {
+  top: 4px;
+  bottom: auto;
+
+  [type="checkbox"] + label:before {
+    left: auto;
+    right: 4px;
+  }
+}
+
+
+.ps-members-scroll {
+  line-height: 0;
+}
+
+
+.ps-member-is-online {
+  font-size: $font-size-sm;
+  color: $member-online-color;
+}

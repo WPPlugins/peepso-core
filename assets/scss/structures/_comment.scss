@@ -1,0 +1,384 @@
+//
+//  COMMENT STRUCTURE
+//
+
+
+
+.ps-comment {
+  position: relative;
+  background-color: $comment-bg;
+
+  @extend %clearfix;
+
+  &.ps-comment-nested {
+    margin-left: 60px;
+  }
+}
+
+
+.ps-comment-item {
+  position: relative;
+  display: table;
+  width: 100%;
+  padding: $padding-sm $padding-base;
+  border-top: $comment-item-separator;
+  color: $comment-item-color;
+
+  @if $scss-direction == rtl {
+    padding-left: 30px;
+  } @else {
+    padding-right: 30px;
+  }
+
+  a {
+    word-wrap: break-word;
+  }
+
+  #wpadminbar & {
+    padding: $padding-sm $padding-base !important;
+    border-top: $comment-item-separator !important;
+    width: 100%;
+  }
+}
+
+
+.ps-comment-body {
+  display: table-cell;
+  vertical-align: middle;
+  word-break: break-word;
+
+  @if $scss-direction == rtl {
+    padding-right: $padding-base;
+
+    #wpadminbar & {
+      padding-right: $padding-base;
+    }
+  } @else {
+    padding-left: $padding-base;
+
+    #wpadminbar & {
+      padding-left: $padding-base;
+    }
+  }
+
+  .ps-tagging-wrapper {
+    background-color: $tagging-wrapper-bg;
+  }
+
+  .ps-textarea:focus {
+    border-width: 1px;
+  }
+
+  .ps-tagging-beautifier {
+    border: 1px solid transparent;
+    padding: $padding-sm;
+    line-height: 16px;
+  }
+
+  p {
+    font-size: $font-size-alt;
+    line-height: $line-height-base;
+  }
+}
+
+
+.ps-comment-message {
+  margin-top: ($padding-sm / 2);
+  margin-bottom: $padding-sm;
+
+  p {
+    margin-bottom: 0;
+
+    &:first-child {
+      display: inline;
+    }
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.ps-comment-content {
+  word-break: break-word;
+
+  p {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+}
+
+
+.ps-comment-links {
+  display: inline-block;
+  padding-left: ($padding-sm / 2);
+  vertical-align: middle;
+  font-size: $font-size-sm;
+
+  a {
+    opacity: 0.75;
+    vertical-align: middle;
+
+    &:hover,
+    &:focus {
+      opacity: 1;
+    }
+  }
+
+  a > span {
+    display: none;
+  }
+
+  .actaction-delete {
+    position: absolute;
+    top: $padding-base;
+
+    @if $scss-direction == rtl {
+      left: 10px;
+    } @else {
+      right: 10px;
+    }
+  }
+
+  @include media('medium') {
+    a > span {
+      display: inline-block;
+    }
+  }
+}
+
+
+.ps-comment-user {
+  font-size: $font-size-alt;
+  font-weight: bold;
+}
+
+
+.ps-comment-time {
+  color: $color-text-light;
+
+  small {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  #wpadminbar & {
+    font-size: $font-size-xs;
+    
+    span {
+      font-size: $font-size-xs;
+    }
+  }
+}
+
+
+.ps-comment-options {
+  position: absolute;
+  top: $padding-sm;
+
+  @if $scss-direction == rtl {
+    left: $padding-sm;
+  } @else {
+    right: $padding-sm;
+  }
+}
+
+
+.ps-comment-more {
+  padding: $padding-sm $padding-base;
+  border-top: $comment-more-separator;
+  font-size: $font-size-sm;
+  line-height: $font-size-sm;
+}
+
+
+.ps-comment-edit {
+  margin-bottom: $padding-sm;
+
+  .ps-textarea-wrapper {
+    margin-bottom: $padding-sm;
+  }
+}
+
+
+.ps-comment-reply {
+  position: relative;
+  left: 0;
+  right: 0.1px;
+  display: table;
+  width: 100%;
+  padding: $padding-base;
+  border-top: $comment-reply-separator;
+  background-color: $comment-reply-bg;
+
+  .ps-comment-send,
+  .ps-textarea-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .ps-comment-send {
+    @include media('medium') {
+      width: 115px;
+    }
+  }
+
+  .ps-avatar {
+    display: none;
+    width: 32px;
+    vertical-align: middle;
+
+    img {
+      width: auto;
+      max-width: 32px;
+      padding: 0;
+      border-color: transparent;
+    }
+
+    @include media('medium') {
+      display: table-cell;
+    }
+  }
+
+  .ps-textarea-wrapper {
+    @include media('medium') {
+      @if $scss-direction == rtl {
+        padding-right: $padding-base;
+      } @else {
+        padding-left: $padding-base;
+      }
+    }
+  }
+
+  .ps-textarea {
+    min-height: 35px !important;
+    height: 35px;
+    line-height: 16px;
+    resize: none;
+    transition: none !important;
+
+    @if $scss-direction == rtl {
+      padding-left: 30px;
+    } @else {
+      padding-right: 30px;
+    }
+
+    &:focus {
+      border-width: 1px;
+    }
+  }
+
+  .textntags-wrapper {
+    height: 35px;
+  }
+
+  .ps-button-cancel {
+    display: none;
+
+    @include media('medium') {
+      display: inline-block;
+    }
+  }
+
+  .ps-tagging-wrapper {
+    background-color: $tagging-wrapper-bg;
+  }
+
+  .ps-tagging-beautifier {
+    border: 1px solid transparent;
+    padding: $padding-sm;
+    line-height: $line-height-sm;
+  }
+}
+
+
+.ps-commentbox-actions {
+  position: absolute;
+  top: 11px;
+
+  @if $scss-direction == rtl {
+    left: 7px;
+  } @else {
+    right: 7px;
+  }
+}
+
+
+.ps-commentbox__addons {
+  position: absolute;
+  z-index: map-get($zindex, popover);
+  display: none;
+  width: 100px;
+  margin-top: -1px;
+  background-color: $dropdown-bg;
+  border: $dropdown-border;
+  text-align: center;
+
+  @extend %box-shadow-dark;
+}
+
+
+.ps-commentbox__addon {
+  position: relative;
+  padding: 5px;
+
+  > img {
+    display: none;
+  }
+}
+
+
+.ps-commentbox__addon-remove {
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  display: none;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  background-color: rgba(0,0,0,.15);
+  cursor: pointer;
+
+  > i {
+    vertical-align: middle;
+  }
+}
+
+
+.ps-comment-media {
+  margin-bottom: $padding-base;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &:empty {
+    margin-bottom: 0;
+  }
+}
+
+
+.ps-comment-actions {
+  @if $scss-direction == rtl {
+    text-align: left;
+  } @else {
+    text-align: right;
+  }
+}
+
+
+.ps-comment-loading {
+  @if $scss-direction == rtl {
+    padding-right: $padding-sm;
+  } @else {
+    padding-left: $padding-sm;
+  }
+}
+
+
+.ps-comment-attachment {
+  img {
+    border-radius: $border-radius;
+  }
+}

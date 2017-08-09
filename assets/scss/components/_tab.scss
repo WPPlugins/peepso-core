@@ -1,0 +1,75 @@
+//
+//  TAB COMPONENT
+//
+
+
+
+.ps-tab {
+  @extend %clearfix;
+}
+
+
+.ps-tab-bar {
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  margin-bottom: $padding-base;
+
+  > a {
+    display: table-cell;
+    padding: $padding-sm;
+    color: $tab-item-color !important;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+    text-decoration: none;
+    text-align: center;
+    background-color: $tab-item-bg;
+
+    &.active {
+      background-color: $tab-item-bg-active;
+      font-weight: bold;
+
+      &:hover,
+      &.active {
+        color: $tab-item-color !important;
+        text-decoration: none;
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: lighten($tab-item-color, 8%) !important;
+      text-decoration: none;
+    }
+
+    &:empty {
+      padding: 0;
+    }
+  }
+
+  h2 {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    color: $tab-item-color;
+    font-size: $font-size-sm !important;
+    line-height: $line-height-sm !important;
+  }
+}
+
+
+.ps-tab-content {
+  padding: $padding-base;
+  background-color: $tab-content-bg;
+  color: $tab-content-color;
+
+  @extend %clearfix;
+}
+
+
+.tab-pane {
+  display: none;
+
+  &.active {
+    display: block;
+  }
+}

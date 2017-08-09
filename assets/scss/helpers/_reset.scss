@@ -1,0 +1,104 @@
+//
+//  HELPER: RESET
+//  Prepared for reset whole content inside
+//  specified class
+//
+
+
+
+//
+//  Group of reset settings which should be
+//  used in main wrappers
+//
+%reset {
+  position: relative;
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $font-size-base;
+  box-sizing: border-box;
+  
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    background: none !important;
+    border: 0 !important;
+  }
+
+  button,
+  input,
+  select,
+  textarea {
+    vertical-align: top;
+  }
+
+  p {
+    font-size: $font-size-sm;
+  }
+
+  a {
+    border-bottom: none !important;
+    text-decoration: none !important;
+    outline: none;
+    cursor: pointer;
+    box-shadow: none !important;
+
+    &:hover,
+    &:focus,
+    &.active {
+      text-decoration: none !important;
+      outline: none;
+    }
+  }
+
+  small {
+    font-size: $font-size-xs;
+  }
+
+  button {
+    &.liked,
+    &.liked span {
+      color: $color-link;
+      &:hover {
+        color: $color-link-hover;
+      }
+    }
+  }
+
+  ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    
+    > li {
+      list-style-type: none !important;
+    }
+  }
+
+  img {
+    vertical-align: middle;
+    max-width: 100%;
+  }
+
+  .ps-btn {
+    border: $btn-border !important;
+  }
+
+  * {
+    font-family: $font-family;
+  }
+
+  > *:last-child {
+    margin-bottom: 0 !important;
+  }
+
+  @if $scss-direction == rtl {
+    text-align: right !important;
+  }
+}

@@ -1,0 +1,29 @@
+//
+//  BASE
+//
+
+
+
+//
+//  Wrapping PeepSo plugin
+//
+#peepso-wrap,
+#ps-window {
+  box-sizing: border-box;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+
+//
+//  Reset CSS and wrapping all PeepSo
+//  components
+//
+.peepso {
+  @extend %reset;
+  @extend %form-checkbox;
+
+  min-height: 480px;
+}

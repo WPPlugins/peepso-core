@@ -1,0 +1,62 @@
+//
+//  MODULE COMPONENT
+//
+
+
+
+//
+//  A default widget class, wrapping title,
+//  content and footer
+//
+.ps-widget {
+  background-color: $module-bg;
+}
+
+
+//
+//  A default widget wrapper
+//
+.ps-widget__wrapper {
+  margin-bottom: $padding-base;
+  border: $module-border;
+
+  .ps-tab-bar {
+    margin-bottom: 0;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+//
+//  Widget footer, mostly wrapping links
+//  above the content
+//
+.ps-widget__footer {
+  clear: both;
+  margin-top: $padding-base;
+  font-size: $font-size-sm;
+}
+
+
+//
+//  A modifier used for external modules which
+//  are rendered out of the PeepSo wrapper
+//
+.ps-widget--external {
+  box-sizing: border-box;
+  font-size: $font-size;
+  line-height: $font-size-base;
+
+  *, *:before, *:after {
+    box-sizing: inherit;
+  }
+}
+
+
+//
+//  A wrapper modifier for external widgets
+//
+.ps-widget__wrapper--external {}

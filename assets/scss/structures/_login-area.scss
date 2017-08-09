@@ -1,0 +1,212 @@
+//
+//  LANDING / LOGIN AREA
+//
+
+
+
+.ps-landing {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: $padding-base;
+}
+
+
+.ps-landing-cover {
+  position: relative;
+  height: 0;
+  padding-top: 65%;
+
+  @include media('medium') {
+    padding-top: 38%;
+  }
+}
+
+
+.ps-landing-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(../../assets/images/landing/register-bg.jpg);
+  background-position: center center;
+  background-size: cover;
+}
+
+
+.ps-landing-content {
+  position: absolute;
+  z-index: map-get($zindex, base);
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: $padding-base;
+  background-color: $landing-content-bg;
+  color: $landing-content-color;
+
+  @include media('medium') {
+    display: table;
+  }
+}
+
+
+.ps-landing-text {
+  padding-right: $padding-base;
+
+  h2 {
+    padding: 0;
+    margin-top: $padding-base !important;
+    margin-bottom: $padding-base !important;
+    color: $landing-content-color !important;
+    font-size: ($font-size-lg * 1.1) !important;
+    line-height: ($line-height-md * 1.1) !important;
+  }
+
+  p {
+    margin-top: 0;
+    margin-bottom: $padding-base !important;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  @include media('small') {
+    h2 { display: none }
+    p { display: none }
+  }
+
+  @include media('large') {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+
+.ps-landing-signup {
+  .ps-btn-join {
+    width: 100%;
+  }
+
+  @include media('large') {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
+
+    .ps-btn-join {
+      width: auto
+    }
+  }
+}
+
+
+.ps-landing-form {
+  @include media('large') {
+    display: table;
+    width: 100%;
+  }
+}
+
+
+.ps-landing-action {
+  padding: $padding-base;
+  background-color: $landing-action-bg;
+  border: $landing-action-border;
+
+  .ps-form-input,
+  .ps-btn-login,
+  .ps-input {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: $padding-base;
+    vertical-align: top;
+  }
+
+  .ps-btn-login {
+    height: 35px;
+  }
+
+  .ps-link {
+    display: block;
+    margin-top: $padding-sm;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+
+  @include media('medium') {
+    .ps-checkbox {
+      float: left;
+      margin-right: 2%;
+      white-space: nowrap;
+      line-height: 1;
+
+      label {
+        white-space: nowrap;
+      }
+
+      input {
+        margin: 0;
+      }
+
+      [type="checkbox"] + label::before {
+        top: 1px;
+      }
+    }
+
+    .ps-link {
+      float: left;
+      margin-top: 0;
+      margin-right: 2%;
+    }
+  }
+
+  @include media('large') {
+    .ps-form-input {
+      display: table-cell;
+      padding-right: $padding-sm;
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+
+    .ps-form-input {
+      width: auto !important;
+    }
+
+    .ps-form-input--button {
+      width: 25% !important;
+    }
+  }
+
+  @extend %clearfix;
+}
+
+
+.ps-landing-social {
+  .ps-widget--wsl {
+    margin-top: 0;
+    margin-bottom: $padding-base;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .wp-social-login-connect-with {
+    display: none;
+  }
+
+  @include media('large') {
+    .ps-widget--wsl {
+      display: table-cell;
+      width: 30% !important;
+      vertical-align: top;
+      text-align: right;
+
+      &.has-more {
+        text-align: left;
+      }
+    }
+  }
+}

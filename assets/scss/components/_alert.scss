@@ -1,0 +1,50 @@
+//
+//  ALERT COMPONENT
+//
+
+
+
+.ps-alert {
+  @extend %clearfix;
+
+  display: block;
+  padding: $alert-padding;
+  margin-bottom: $padding-base;
+  background-color: $alert;
+  color: $alert-color;
+  font-size: $alert-font-size;
+  line-height: $alert-line-height;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+.ps-alert--sm {
+  padding: 4px $padding-sm;
+  margin-bottom: $padding-sm;
+}
+
+
+.ps-alert-success {
+  background-color: $alert-success;
+  color: $alert-success-color;
+}
+
+
+.ps-alert-warning {
+  background-color: $alert-warning;
+  color: $alert-warning-color;
+}
+
+
+.ps-alert-danger {
+  background-color: $alert-danger;
+  color: $alert-danger-color;
+}

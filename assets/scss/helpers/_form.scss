@@ -1,0 +1,170 @@
+//
+//  HELPER: FORM
+//
+
+
+
+//
+//  Form row
+//
+%form-row {
+  @extend %clearfix;
+
+  margin-bottom: $padding-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+%form-row--single {
+  @extend %clearfix;
+
+  margin-bottom: $padding-sm;
+}
+
+
+//
+//  Form label
+//
+%form-label {
+  display: block;
+
+  @include media('medium') {
+    width: 40%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+    @if $scss-direction == rtl {
+      float: right;
+    } @else {
+      float: left;
+    }
+  }
+}
+
+
+//
+//  Form controls
+//
+%form-controls {
+  margin-top: $padding-sm;
+
+  @include media('medium') {
+    width: 60%;
+    margin-top: 0;
+
+    @if $scss-direction == rtl {
+      float: right;
+    } @else {
+      float: left;
+    }
+  }
+}
+
+
+//
+//  Form column
+//
+%form-col {
+  @include media('medium') {
+    float: left;
+    width: 50%;
+    padding-right: $padding-base;
+
+    &:nth-child(3n) {
+      padding-right: $padding-base;
+
+      &:before {
+        clear: both;
+      }
+    }
+
+    &:nth-child(2n) {
+      padding-left: $padding-base;
+      padding-right: 0;
+    }
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+}
+
+
+//
+//  Checkbox & Radio
+//
+%form-checkbox {
+  [type="checkbox"]:not(:checked),
+  [type="checkbox"]:checked,
+  [type="radio"]:not(:checked),
+  [type="radio"]:checked {
+    opacity: 0;
+  }
+
+  [type="checkbox"] + label,
+  [type="radio"] + label {
+    display: inline;
+    margin: 0;
+    clear: none;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+
+    @if $scss-direction == rtl {
+      padding-right: $padding-sm;
+    } @else {
+      padding-left: $padding-sm;
+    }
+
+    &:before {
+      position: absolute;
+      top: 5px;
+      display: block;
+      width: 13px;
+      height: 13px;
+      border: 1px solid $color-gray-light;
+      content: '';
+
+      @if $scss-direction == rtl {
+        right: 0;
+      } @else {
+        left: 0;
+      }
+    }
+  }
+
+  [type="radio"] + label:before {
+    border-radius: 100%;
+  }
+
+  [type="checkbox"]:disabled + label,
+  [type="radio"]:disabled + label {
+    &:before {
+      opacity: .25;
+    }
+  }
+
+  [type="checkbox"]:disabled:checked + label,
+  [type="radio"]:disabled:checked + label {
+    &:before {
+      opacity: .5;
+    }
+  }
+
+  [type="checkbox"]:checked + label {
+    &:before {
+      background: url(../../assets/images/ps-check.png) left center no-repeat;
+      border: 0;
+    }
+  }
+
+  [type="radio"]:checked + label {
+    &:before {
+      background: url(../../assets/images/ps-radio.png) left center no-repeat;
+      border: 0;
+    }
+  }
+}

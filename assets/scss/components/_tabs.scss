@@ -1,0 +1,138 @@
+//
+//  COMPONENT: TABS
+//
+
+
+
+//
+//  Wrapping a list of tabs
+//
+.ps-tabs {
+  @extend %flex;
+  
+  //  Stretch flex items
+  -webkit-align-items: stretch;
+  align-items: stretch;
+
+  background-color: $tabs-item-bg;
+  border: $tabs-item-border;
+}
+
+
+//
+//  Wrapping tabs component
+//
+.ps-tabs__wrapper {
+  position: relative;
+  z-index: map-get($zindex, normal);
+  margin-bottom: $padding-base;
+}
+
+
+//
+//  Tab item, used to switch content assigned
+//  to tabs.
+//
+.ps-tabs__item {
+  position: relative;
+  background-color: $tabs-item-bg;
+
+  //  Align flex items vertically
+  -webkit-align-self: center;
+  align-self: center;
+
+  //  Force flex items to fill container
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+
+  > a {
+    display: block;
+    padding: ($padding-sm / 2);
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    outline: 0;
+    text-align: center;
+
+    @include media('medium') {
+      padding: $padding-sm;
+      font-size: $font-size-base;
+    }
+  }
+
+  &.current {
+    font-weight: bold;
+    background: $tabs-item-active-bg;
+  }
+}
+
+
+//
+//  Used to align tabs wrapper to the nearest
+//  block under it
+//
+.ps-tabs--align {
+  margin-bottom: -1px;
+
+  .ps-tabs {
+    border-bottom: none;
+  }
+}
+
+
+//
+//  Arrow tabs
+//
+.ps-tabs--arrows {
+  background: none;
+  border: none;
+
+  .ps-tabs__item {
+    width: 50%;
+    padding-bottom: $padding-sm;
+    background: none;
+    overflow: hidden;
+
+    &:before {
+      position: absolute;
+      width: 100%;
+      height: 8px;
+      bottom: 0px;
+      content: ' ';
+    }
+
+    &:before {
+      left: 0;
+      border-top: 1px solid $tabs-arrows-color;
+      transform-origin: left bottom;
+    }
+
+    &.current {
+      background: none;
+
+      &:before,
+      &:after {
+        position: absolute;
+        width: 50%;
+        height: 8px;
+        bottom: 0px;
+        content: ' ';
+      }
+
+      &:before {
+        left: 1px;
+        border-top: 1px solid $tabs-arrows-color;
+        border-right: 1px solid $tabs-arrows-color;
+        transform-origin: left bottom;
+        transform: skewX(45deg);
+      }
+
+      &:after {
+        right: 1px;
+        border-top: 1px solid $tabs-arrows-color;
+        border-left: 1px solid $tabs-arrows-color;
+        transform-origin: right bottom;
+        transform: skewX(-45deg);
+      }
+    }
+  }
+}

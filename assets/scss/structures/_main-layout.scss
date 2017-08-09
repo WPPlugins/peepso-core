@@ -1,0 +1,306 @@
+//
+//  MAIN LAYOUT
+//
+
+
+
+.ps-body {
+  @extend %clearfix;
+}
+
+
+.ps-main {
+  width: 100%;
+
+  @include media('large') {
+    @if ($scss-stream-position == left) {
+      float: left;
+      padding-left: 0;
+      padding-right: $padding-base;
+    }
+
+    @else {
+      float: left;
+      padding-left: $padding-base;
+    }
+
+    width: $primary-width;
+  }
+}
+
+
+.ps-main-full {
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+
+.ps-sidebar {
+  width: 100%;
+
+  @include media('large') {
+    @if ($scss-stream-position == left) {
+      float: right;
+      padding-right: 0;
+    }
+
+    @else {
+      float: left;
+    }
+
+    width: $secondary-width;
+  }
+}
+
+
+.ps-page {
+  position: relative;
+  padding: $padding-base;
+  background-color: $page-bg;
+  border: $page-border;
+
+  @extend %clearfix;
+}
+
+
+.ps-page__actions {
+  margin-bottom: $padding-base;
+
+  @include media('medium') {
+    position: absolute;
+    top: 0;
+    margin-bottom: 0;
+
+    @if $scss-direction == rtl {
+      left: 0;
+    } @else {
+      right: 0;
+    }
+
+    &+ .ps-page-title {
+      @if $scss-direction == rtl {
+        padding-left: 180px;
+      } @else {
+        padding-right: 180px;
+      }
+    }
+  }
+}
+
+
+.ps-page-unstyled {
+  position: relative;
+  padding: 0;
+
+  @extend %clearfix;
+}
+
+
+.ps-page-messages {
+  border: $page-border;
+}
+
+
+.ps-page-profile,
+.ps-page--group,
+.ps-page--activity-post {
+  .ps-toolbar,
+  .ps-toolbar-desktop {
+    margin-bottom: 0;
+  }
+
+  .ps-toolbar-menu {
+    margin-top: 0;
+  }
+}
+
+
+.ps-page--activity-post {
+  .ps-main > .ps-postbox {
+    margin-top: $padding-base;
+  }
+}
+
+
+.ps-page-title {
+  padding: 0;
+  margin-top: 0 !important;
+  margin-bottom: $padding-base !important;
+  color: $page-title-color;
+  font-size: $page-title-font-size !important;
+  line-height: $page-title-line-height;
+
+  &-single {
+    padding: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    color: $page-title-color;
+    font-size: $page-title-font-size !important;
+    line-height: $page-title-line-height;
+  }
+}
+
+
+.ps-page-filters {
+  margin-bottom: $padding-base;
+
+  > .ps-select {
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  > .ps-btn {
+    display: table-cell;
+    width: 25%;
+    line-height: 19px;
+    vertical-align: middle;
+
+    > [class^="ps-icon-"] {
+      line-height: 1.3;
+    }
+  }
+
+  @include media('large') {
+    display: table;
+    width: 100%;
+  }
+}
+
+
+.ps-filters-row {
+  label {
+    display: block;
+    line-height: 22px;
+    color: $color-text;
+  }
+
+  .ps-checkbox {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  .ps-select {
+    width: 100%;
+    height: 35px;
+  }
+
+  @include media('large') {
+    display: table-cell;
+
+    .ps-select {
+      width: auto;
+      min-width: 150px;
+    }
+  }
+}
+
+
+.ps-page-actions {
+  position: absolute;
+  top: 0;
+
+  @if $scss-direction == rtl {
+    left: 0;
+  } @else {
+    right: 0;
+  }
+}
+
+
+.ps-page-footer {
+  margin-top: $padding-base;
+}
+
+
+.ps-page-split {
+  display: block;
+  width: 100%;
+  table-layout: fixed;
+
+  @include media('medium') {
+    display: table;
+  }
+}
+
+
+.ps-page-half {
+  display: block;
+
+  @if $scss-direction == rtl {
+    text-align: right;
+  } @else {
+    text-align: left;
+  }
+
+  &.show-thumbnail {
+    vertical-align: middle;
+  }
+
+  &:first-child {
+    @if $scss-direction == rtl {
+      padding-left: $padding-base;
+    } @else {
+      padding-right: $padding-base;
+    }
+  }
+
+  &:last-child {
+    padding: $padding-base;
+    background-color: $page-half-bg;
+  }
+
+  @include media('medium') {
+    display: table-cell;
+  }
+}
+
+
+.ps-page--preferences {
+  .ps-form-legend {
+    margin-top: $padding-sm;
+    margin-left: (-$padding-base);
+    margin-right: (-$padding-base);
+    padding: $padding-base;
+    background-color: $page-legend-bg;
+
+    &:first-child {
+      margin-top: (-$padding-base);
+    }
+  }
+
+  .ps-form-controls {
+    margin-bottom: 0;
+    padding-top: $padding-sm;
+    padding-bottom: $padding-sm;
+
+    .ps-input,
+    .ps-select,
+    .ps-textarea {
+      width: 100%;
+    }
+  }
+}
+
+
+.ps-page--register {
+  @include media('medium') {
+    .ps-widget--wsl {
+      display: table;
+      width: 100%;
+    }
+
+    .wp-social-login-connect-with {
+      display: table-cell;
+      width: 140px;
+      padding-right: $padding-base;
+      color: $color-text-dark;
+      vertical-align: middle;
+    }
+
+    .wp-social-login-provider-list {
+      display: table-cell;
+      vertical-align: middle;
+    }
+  }
+}

@@ -1,0 +1,74 @@
+//
+//  HELPER: PHOTOS
+//  Created for photos list
+//
+
+
+
+//
+//  Used for photo items
+//
+%photos {
+  @extend %clearfix;
+
+  margin-left: -($padding-sm / 2);
+  margin-right: -($padding-sm / 2);
+}
+
+
+//
+//  Helper used for photo wrappers, which can
+//  wrap a photo item and its details
+//
+%photo__wrapper {
+  float: left;
+  width: 100%;
+  margin-bottom: $padding-sm;
+  padding-left: ($padding-sm / 2);
+  padding-right: ($padding-sm / 2);
+
+  @if $scss-direction == rtl {
+    float: right;
+  } @else {
+    float: left;
+  }
+
+  &:nth-child(2n+1) {
+    clear: both;
+  }
+
+  @include media('medium') {
+    width: 25%;
+
+    &:nth-child(2n+1) {
+      clear: none;
+    }
+
+    &:nth-child(4n+1) {
+      clear: both;
+    }
+  }
+}
+
+
+//
+//  Used for photo items to position it
+//  inside a wrapper
+//
+%photo__item {
+  position: relative;
+  max-width: 256px;
+  margin-left: auto;
+  margin-right: auto;
+
+  > a {
+    display: block;
+  }
+
+  img {
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+    width: 100%;
+  }
+}

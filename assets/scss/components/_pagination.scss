@@ -1,0 +1,50 @@
+//
+//  PAGINATION COMPONENT
+//
+
+
+
+.ps-pagination {
+  display: block;
+  margin-top: $padding-base;
+  background-color: $pagination-bg;
+  text-align: center;
+
+  @extend %clearfix;
+}
+
+
+.ps-pagination-item,
+.ps-pagination-next,
+.ps-pagination-prev,
+.ps-pagination-total {
+  display: inline-block;
+
+  a,
+  span {
+    display: block;
+    padding-left: $padding-sm;
+    padding-right: $padding-sm;
+    font-size: $font-size-sm;
+    line-height: 32px;
+  }
+
+  a {
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $pagination-item-bg-hover;
+    }
+  }
+}
+
+
+.ps-pagination-item,
+.ps-pagination-prev {
+  float: left;
+}
+
+
+.ps-pagination-next {
+  float: right;
+}

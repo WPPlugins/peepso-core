@@ -1,0 +1,83 @@
+//
+//  ACCORDION COMPONENT
+//
+
+
+
+.ps-accordion {
+  @extend %clearfix;
+}
+
+
+.ps-accordion__item {
+  margin-bottom: $padding-sm;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.ps-accordion__title {
+  position: relative;
+  padding: $padding-sm;
+  background-color: $accordion-bg;
+  border: $divider;
+
+  .current & {
+    background-color: $accordion-bg-active;
+  }
+
+  @if $scss-direction == rtl {
+    padding-left: 35px;
+  } @else {
+    padding-right: 35px;
+  }
+}
+
+
+.ps-accordion__action {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  padding: $padding-sm ($padding-sm / 2);
+  color: $color-text-light;
+
+  &:hover,
+  &:focus {
+    color: $color-text;
+  }
+
+  @if $scss-direction == rtl {
+    left: 0;
+  } @else {
+    right: 0;
+  }
+}
+
+
+.ps-accordion__body {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+
+  .current & {
+    height: auto;
+    padding: $padding-sm;
+    overflow: auto;
+  }
+}
+
+
+.ps-accordion__footer {
+  display: none;
+  padding-top: ($padding-sm / 2);
+  padding-left: $padding-sm;
+  padding-right: $padding-sm;
+  padding-bottom: ($padding-sm / 2);
+
+  .current & {
+    display: block;
+  }
+}

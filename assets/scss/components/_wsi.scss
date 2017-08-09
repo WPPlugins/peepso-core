@@ -1,0 +1,35 @@
+.ps-wsi {
+  margin-bottom: $padding-base;
+  text-align: center;
+  border-top: $divider;
+
+  .wsi-title {
+    display: none !important;
+  }
+
+  .service-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .divprovider {
+    flex-grow: 1;
+    width: auto;
+    padding: 10px;
+  }
+}
+
+
+.ps-wsi__title {
+  margin-top: $padding-sm;
+  margin-bottom: $padding-sm;
+  font-size: 14px;
+  color: $color-text-light;
+
+  @include media('medium') {
+    margin-top: $padding-base;
+    margin-bottom: $padding-base;
+    font-size: 16px;
+  }
+}

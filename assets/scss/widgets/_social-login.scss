@@ -1,0 +1,216 @@
+//
+//  WIDGET: WORDPRESS SOCIAL LOGIN
+//
+
+
+
+//  Widget variables
+$wsl-facebook-bg:              #3b5998;
+$wsl-twitter-bg:               #00acee;
+$wsl-google-bg:                #dd4b39;
+$wsl-yahoo-bg:                 #7f2db5;
+$wsl-linkedin-bg:              #0e76a8;
+$wsl-steam-bg:                 #171515;
+$wsl-wordpress-bg:             #464646;
+$wsl-disqus-bg:                #35A1FB;
+$wsl-instagram-bg:             #125688;
+$wsl-reddit-bg:                #FF4500;
+$wsl-foursquare-bg:            #17BCE2;
+$wsl-lastfm-bg:                #e3152b;
+$wsl-tumblr-bg:                #34506B;
+$wsl-goodreads-bg:             #9F6C40;
+$wsl-stackoverflow-bg:         #F47A20;
+$wsl-dribbble-bg:              #F26798;
+$wsl-github-bg:                #000;
+$wsl-500px-bg:                 #00AEEF;
+$wsl-skyrock-bg:               #009AFF;
+$wsl-mixi-bg:                  #F5A41D;
+$wsl-twitchtv-bg:              #6441A5;
+$wsl-vkontakte-bg:             #4C75A3;
+$wsl-mailru-bg:                #134785;
+$wsl-yandex-bg:                #ED1E24;
+$wsl-odnoklassniki-bg:         #E27E35;
+$wsl-aol-bg:                   #FFCC0B;
+$wsl-live-bg:                  #91C300;
+$wsl-pixelpin-bg:              #000;
+
+
+//  Widget mixins
+@mixin wsl-button-variant($background) {
+  background: $background;
+
+  &:hover,
+  &:focus,
+  &:active {
+    background: darken($background, 8%);
+  }
+}
+
+
+//  Widget styles
+.ps-widget--wsl {
+  position: relative;
+  margin-top: $padding-base;
+  padding-top: $padding-base;
+  border-top: $module-separator;
+
+  @extend %clearfix;
+
+  .ps-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 35px;
+  }
+
+  .wp-social-login-connect-with {
+    margin-bottom: $padding-sm;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .wp-social-login-provider-list {
+    padding: 0;
+
+    .wp-social-login-provider-item {
+      display: inline-block;
+      margin: 0;
+      margin-bottom: 3px;
+      padding: 0;
+      text-align: center;
+
+      span {
+        display: none;
+
+        @include media('large') {
+          display: inline-block;
+        }
+      }
+
+      .ps-widget--profile & {
+        display: block;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+
+      &:nth-last-child(n+3),
+      &:nth-last-child(n+3) ~ * {
+        display: inline-block;
+
+        span {
+          display: none;
+
+          @include media('large') {
+            display: none;
+          }
+        }
+      }
+
+      > a {
+        display: block;
+        padding: $padding-sm;
+        font-size: $btn-font-size;
+        line-height: $btn-line-height;
+        color: #fff;
+
+        > span {
+          margin-left: 2px;
+        }
+
+        &:hover,
+        &:focus {
+          color: #fff;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  //Set the background color for each provider buttons
+  .wp-social-login-provider-facebook       { @include wsl-button-variant($wsl-facebook-bg); }
+  .wp-social-login-provider-twitter        { @include wsl-button-variant($wsl-twitter-bg); }
+  .wp-social-login-provider-google         { @include wsl-button-variant($wsl-google-bg); }
+  .wp-social-login-provider-yahoo          { @include wsl-button-variant($wsl-yahoo-bg); }
+  .wp-social-login-provider-linkedin       { @include wsl-button-variant($wsl-linkedin-bg); }
+  .wp-social-login-provider-steam          { @include wsl-button-variant($wsl-steam-bg); }
+  .wp-social-login-provider-wordpress      { @include wsl-button-variant($wsl-wordpress-bg); }
+  .wp-social-login-provider-disqus         { @include wsl-button-variant($wsl-disqus-bg); }
+  .wp-social-login-provider-instagram      { @include wsl-button-variant($wsl-instagram-bg); }
+  .wp-social-login-provider-reddit         { @include wsl-button-variant($wsl-reddit-bg); }
+  .wp-social-login-provider-foursquare     { @include wsl-button-variant($wsl-foursquare-bg); }
+  .wp-social-login-provider-lastfm         { @include wsl-button-variant($wsl-lastfm-bg); }
+  .wp-social-login-provider-tumblr         { @include wsl-button-variant($wsl-tumblr-bg); }
+  .wp-social-login-provider-goodreads      { @include wsl-button-variant($wsl-goodreads-bg); }
+  .wp-social-login-provider-stackoverflow  { @include wsl-button-variant($wsl-stackoverflow-bg); }
+  .wp-social-login-provider-dribbble       { @include wsl-button-variant($wsl-dribbble-bg); }
+  .wp-social-login-provider-github         { @include wsl-button-variant($wsl-github-bg); }
+  .wp-social-login-provider-500px          { @include wsl-button-variant($wsl-500px-bg); }
+  .wp-social-login-provider-skyrock        { @include wsl-button-variant($wsl-skyrock-bg); }
+  .wp-social-login-provider-mixi           { @include wsl-button-variant($wsl-mixi-bg); }
+  .wp-social-login-provider-twitchtv       { @include wsl-button-variant($wsl-twitchtv-bg); }
+  .wp-social-login-provider-vkontakte      { @include wsl-button-variant($wsl-vkontakte-bg); }
+  .wp-social-login-provider-mailru         { @include wsl-button-variant($wsl-mailru-bg); }
+  .wp-social-login-provider-yandex         { @include wsl-button-variant($wsl-yandex-bg); }
+  .wp-social-login-provider-odnoklassniki  { @include wsl-button-variant($wsl-odnoklassniki-bg); }
+  .wp-social-login-provider-aol            { @include wsl-button-variant($wsl-aol-bg); }
+  .wp-social-login-provider-live           { @include wsl-button-variant($wsl-live-bg); }
+  .wp-social-login-provider-pixelpin       { @include wsl-button-variant($wsl-pixelpin-bg); }
+}
+
+
+.ps-widget--wsl-dropdown {
+  @extend %clearfix;
+  @extend %box-shadow;
+  @extend %radius--reset;
+
+  position: absolute;
+  z-index: map-get($zindex, dropdown);
+  top: 100%;
+  right: 0;
+  width: auto;
+  max-width: 100%;
+  padding: $padding-sm;
+  padding-bottom: ($padding-sm - 3px);
+  border: $dropdown-border;
+  background-color: $dropdown-bg;
+
+  > ul {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .wp-social-login-provider-item {
+    float: left;
+    display: block;
+    margin: 0;
+    margin-bottom: 3px;
+    padding: 0;
+    padding-right: 3px;
+
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+
+  a {
+    display: block;
+    padding: $padding-sm;
+    font-size: $btn-font-size;
+    line-height: $btn-line-height;
+    color: #fff;
+
+    > span {
+      display: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+}

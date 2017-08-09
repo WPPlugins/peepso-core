@@ -1,0 +1,31 @@
+//
+//  HELPER: UTILITY
+//
+
+
+
+%bordered {
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+
+%box-shadow {
+  -webkit-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+%box-shadow-dark {
+  -webkit-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+%circle {
+  -webkit-border-radius: 100%;
+  -moz-border-radius: 100%;
+  -o-border-radius: 100%;
+  border-radius: 100%;
+}

@@ -1,0 +1,662 @@
+//
+// FORM STRUCTURE
+//
+
+
+
+.ps-form {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+.ps-input,
+.ps-select,
+input[type="text"].ps-input,
+input[type="password"].ps-input {
+  @extend %ps-input;
+}
+
+
+.ps-input--small {
+  height: auto !important;
+  padding: 4px !important;
+}
+
+
+.ps-input__wrapper {
+  margin-bottom: $padding-base;
+}
+
+
+.ps-select {
+  @extend %ps-select;
+}
+
+
+.ps-select-small {
+  height: auto !important;
+  padding-top: 4px;
+  padding-left: 3px;
+  padding-right: $padding-base;
+  padding-bottom: 3px;
+  background-position: 100% -30%;
+
+
+  &:focus {
+    background-position: 100% 130%;
+  }
+}
+
+
+.ps-checkbox {
+  position: relative;
+  line-height: 22px;
+
+  span,
+  label {
+    color: $color-text-light;
+    font-size: $font-size-sm;
+  }
+
+  @if $scss-direction == rtl {
+    > input {
+      float: right;
+    }
+  }
+}
+
+
+.ps-checkbox--enter {
+  display: block;
+  width: 100%;
+  margin-bottom: 1px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  background-color: rgba(0,0,0,.03);
+
+  @if $scss-direction == rtl {
+    text-align: right;
+  } @else {
+    text-align: left;
+  }
+
+  > [type="checkbox"] + label {
+    @if $scss-direction == rtl {
+      padding-right: 0;
+    } @else {
+      padding-left: 0;
+    }
+
+    &:before {
+      top: 7px;
+
+      @if $scss-direction == rtl {
+        right: 5px;
+      } @else {
+        left: 5px;
+      }
+    }
+  }
+
+  @include media('medium') {
+    display: inline-block;
+    width: auto;
+    margin-top: 5px;
+    margin-bottom: 0;
+    padding: 0;
+    background-color: transparent;
+
+    @if $scss-direction == rtl {
+      margin-left: $padding-sm;
+    } @else {
+      margin-right: $padding-sm;
+    }
+
+    > [type="checkbox"] + label {
+      &:before {
+        top: 4px;
+
+        @if $scss-direction == rtl {
+          right: 5px;
+        } @else {
+          left: 5px;
+        }
+      }
+    }
+  }
+}
+
+
+.ps-checkbox--alt {
+  line-height: 1;
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    position: relative;
+    top: 1px;
+    margin: 0;
+  }
+
+  span,
+  label {
+    padding-left: $padding-sm;
+    font-size: $font-size-base;
+  }
+}
+
+
+.ps-checkbox--poll {
+  > [type="radio"],
+  > [type="checkbox"] {
+    margin: 0;
+  }
+
+  > [type="radio"]:disabled,
+  > [type="checkbox"]:disabled {
+    + label:before {
+      display: none;
+    }
+
+    &:checked {
+      + label:before {
+        display: block;
+      }
+    }
+  }
+}
+
+
+.ps-form-legend {
+  margin-bottom: $padding-base;
+  color: $color-text;
+  font-size: $font-size-md;
+  font-weight: normal;
+}
+
+
+.ps-form__label-desc {
+  margin-top: ($padding-sm / 2);
+  margin-bottom: 0 !important;
+  color: $color-muted;
+}
+
+
+.ps-form-group {
+  position: relative;
+  display: block;
+  width: 100%;
+  margin-top: $padding-base;
+  color: $color-text-dark;
+
+  &.has-privacy {
+    @if $scss-direction == rtl {
+      padding-left: 60px;
+    } @else {
+      padding-right: 60px;
+    }
+  }
+
+  > label {
+    font-size: $font-size-sm;
+  }
+
+  .ps-input,
+  .ps-select,
+  .ps-textarea {
+    width: 100%;
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  @include media('medium') {
+    display: table;
+
+    @if $scss-direction == rtl {
+      padding-left: 60px;
+    } @else {
+      padding-right: 60px;
+    }
+
+    > label {
+      &:first-child {
+        vertical-align: middle;
+        display: table-cell;
+        width: 140px;
+
+        @if $scss-direction == rtl {
+          padding-left: $padding-base;
+        } @else {
+          padding-right: $padding-base;
+        }
+      }
+    }
+  }
+}
+
+
+.ps-form-controls {
+  margin-bottom: $padding-sm;
+  color: $color-text-dark;
+
+  > label {
+    display: block;
+    margin-bottom: $padding-sm;
+  }
+}
+
+
+.ps-alerts-section {
+  line-height: 18px;
+
+  [type="checkbox"] + label:before {
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  label > b {
+    display: block;
+    padding-bottom: 10px;
+    border-bottom: $divider-dashed;
+  }
+}
+
+
+.ps-field-placeholder {
+  color: $color-muted;
+  font-style: italic;
+}
+
+
+.ps-form-helper {
+  color: $color-text-light;
+  font-size: $font-size-sm;
+  line-height: $line-height-sm;
+}
+
+
+.ps-form-error{
+  @extend %ps-list;
+
+  display: block;
+  border-top: 2px solid lighten($form-error-color, 10%);
+
+  > li {
+    color: $form-error-color;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+}
+
+
+.ps-form-input {
+  @include media('large') {
+    display: inline-block;
+  }
+}
+
+
+.ps-form-input-icon {
+  position: relative;
+
+  .ps-icon {
+    position: absolute;
+    top: 10px;
+    left: 9px;
+  }
+
+  .ps-input {
+    padding-left: ($padding-base * 2) !important;
+  }
+}
+
+
+.required-sign {
+  color: $required-sign-color;
+}
+
+
+.submitel {
+  @include media('medium') {
+    padding-left: 140px;
+  }
+}
+
+
+.ps-form-privacy {
+  display: block;
+
+  button {
+    width: 100%;
+    height: 35px;
+    margin-top: 4px;
+  }
+
+  .ps-dropdown-menu {
+    width: 100%;
+  }
+
+  @include media('medium') {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    button {
+      margin-top: 0;
+    }
+  }
+}
+
+
+.ps-privacy-dropdown {
+  position: relative;
+
+  .ps-dropdown-menu {
+    left: auto;
+    right: 0;
+  }
+}
+
+
+.ps-privacy-title {
+  display: none;
+
+  @include media('medium') {
+    display: inline-block;
+  }
+}
+
+
+.ps-textarea {
+  @extend %ps-textarea;
+  @extend %radius--reset;
+}
+
+
+.ps-textarea-wrapper {
+  position: relative;
+
+  .ps-icon-add {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+}
+
+
+.ps-form-search {
+  position: relative;
+  margin-bottom: $padding-base;
+  padding-right: 35px;
+
+  input[type="text"] {
+    width: 100%;
+    display: block;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+  }
+  
+  .ps-btn {
+    position: absolute;
+    top:0;
+    right: 0;
+    display: block;
+    height: 35px;
+  }
+
+  @extend %clearfix;
+}
+
+
+.ps-form-search-messages {
+  padding-right: 45px;
+}
+
+
+.ps-form-search-opt {
+  position: absolute;
+  top:0;
+  right: 0;
+  font-size: $font-size-md;
+  line-height: 34px;
+}
+
+
+.ps-form__actions {
+  margin-top: $padding-base;
+  padding-top: $padding-base;
+  border-top: $divider;
+
+  @extend %clearfix;
+}
+
+
+.ps-form__error {
+  margin-bottom: ($padding-sm / 2);
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+.ps-form__legend {
+  margin-top: ($padding-base * 2);
+  margin-bottom: $padding-base;
+  padding-bottom: $padding-base;
+  font-size: $font-size-md;
+  font-weight: normal;
+  color: $color-text;
+  border-bottom: $divider;
+
+  &:first-of-type {
+    margin-top: 0;
+  }
+}
+
+
+.ps-form__desc {
+  margin-top: $padding-sm;
+  font-size: $font-size-base;
+  color: $color-gray;
+}
+
+
+//
+//  Wrapping form label and controls
+//
+.ps-form__row {
+  @extend %form-row;
+}
+
+
+.ps-form__row--single {
+  @extend %form-row--single;
+}
+
+
+.ps-form__row--error {
+  color: $color-danger;
+
+  .ps-form__controls {
+    input[type="text"] {
+      border-color: $color-danger !important;
+    }
+  }
+}
+
+
+//
+//  Wrapping a form label
+//
+.ps-form__label {
+  @extend %form-label;
+}
+
+
+//
+//  Wrapping a form controls
+//
+.ps-form__controls {
+  position: relative;
+
+  @extend %form-controls;
+
+  .ps-input,
+  .ps-select,
+  input[type="text"].ps-input,
+  input[type="password"].ps-input {
+    height: 34px;
+  }
+}
+
+
+.ps-form__controls--info {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+
+.ps-form__controls--limit {
+  padding-bottom: 15px;
+}
+
+
+.ps-form__controls--half {
+  @extend %clearfix;
+
+  > .ps-form__item {
+    margin-bottom: ($padding-sm / 2);
+
+    @include media('medium') {
+      width: 50%;
+      float: left;
+      padding-right: $padding-sm;
+
+      &:nth-child(2n+2) {
+        padding-left: $padding-sm;
+        padding-right: 0;
+      }
+    }
+
+    .ps-checkbox > label {
+      padding-left: 0;
+    }
+  }
+}
+
+
+//
+//  Wrapping a form helper
+//
+.ps-form__helper {
+  display: block;
+  margin-top: 5px;
+  font-size: $font-size-sm;
+}
+
+
+//
+//
+//
+.ps-form__limit {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  font-size: $font-size-xs;
+  line-height: 1.5;
+
+  @if $scss-direction == rtl {
+    text-align: left;
+  } @else {
+    text-align: right;
+  }
+}
+
+
+//
+//  Form Column
+//
+.ps-form__column {
+  @extend %form-col;
+
+  &.ps-full {
+    padding: 0;
+    
+    .ps-form__label {
+      float: none;
+      width: auto;
+    }
+
+    .ps-form__controls {
+      float: none;
+      width: auto;
+    }
+  }
+}
+
+
+//
+//  Form modifier for a Ban dialog window
+//
+.ps-form--ban {
+  .ps-form__row {
+    padding-bottom: $padding-sm;
+    border-bottom: $divider;
+
+    &:last-child {
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+  }
+
+  .ps-form__controls {
+    padding-top: ($padding-sm / 2);
+    padding-bottom: ($padding-sm / 2);
+  }
+}
+
+
+//
+//  Form modifier for a Create Album dialog window
+//
+.ps-form--album {
+  @extend %clearfix;
+
+  .ps-form__controls > .ps-input,
+  .ps-form__controls > .ps-select {
+    width: 100%;
+  }
+}
+
+
+//
+//  Form modifier for Groups
+//
+.ps-form--group {
+  @include media('medium') {
+    .ps-form__label {
+      width: 20%;
+
+      @if $scss-direction == rtl {
+        text-align: left;
+      } @else {
+        text-align: right;
+      }
+    }
+
+    .ps-form__controls {
+      width: 80%;
+
+      @if $scss-direction == rtl {
+        padding-right: $padding-base;
+      } @else {
+        padding-left: $padding-base;
+      }
+    }
+  }
+}

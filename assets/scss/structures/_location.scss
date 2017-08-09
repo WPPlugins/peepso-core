@@ -1,0 +1,112 @@
+//
+//  LOCATION
+//
+
+
+
+.ps-location-wrapper {
+  display: none;
+  position: relative;
+  z-index: 10000;
+}
+
+
+.ps-location {
+  background: #FFF;
+  border: 1px solid #00B0FF;
+  border-top: 0 none;
+  font-size: 12px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+
+.ps-location-placeholder {
+  background-color: #00B0FF;
+  color: #FFF;
+  font-weight: bold;
+  padding: 4px 4px 4px 8px;
+}
+
+
+.ps-location-loading {
+  display: none;
+  padding: 8px;
+  text-align: center;
+}
+
+
+.ps-location-result {
+  display: none;
+}
+
+
+.ps-location-header {
+  background-color: #00B0FF;
+  border-bottom: 1px solid #00B0FF;
+  color: #FFF;
+  font-weight: bold;
+  padding: 4px 4px 4px 8px;
+}
+
+
+.ps-location-close {
+  cursor: pointer;
+  float: right;
+}
+
+
+.ps-location-result .ps-btn {
+  display: none;
+  position: absolute;
+    top: 34px;
+    right: 7px;
+}
+
+
+.ps-location-result .ps-btn-danger {
+  opacity: .7;
+}
+
+
+.ps-location-result .ps-btn-danger:hover {
+  opacity: 1;
+}
+
+
+.ps-location-map {
+  display: none;
+  float: right;
+  height: 180px;
+  margin: 4px;
+  max-width: 45%;
+  width: 180px;
+}
+
+
+.ps-location-input {}
+
+
+.ps-location-list {
+  padding: 4px;
+}
+
+
+.ps-location-list a {
+  color: inherit;
+  display: block;
+  line-height: 12px;
+  overflow: hidden;
+  padding: 6px 4px;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.ps-location-list a.ps-location-selected {
+  color: #FFF;
+  background-color: #00B0FF;
+}

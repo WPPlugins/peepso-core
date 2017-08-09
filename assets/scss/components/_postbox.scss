@@ -1,0 +1,513 @@
+//
+//  POSTBOX COMPONENT
+//
+
+
+
+.ps-postbox {
+  position: relative;
+  margin-bottom: $padding-base;
+  background-color: $postbox-bg;
+}
+
+
+.ps-postbox-content {
+  width: 100%;
+  min-height: 55px;
+  border-top: 3px solid $postbox-tab-bg;
+  border-left: 3px solid $postbox-tab-bg;
+  border-right: 3px solid $postbox-tab-bg;
+}
+
+
+.ps-postbox-status {
+  position: relative;
+  padding: $padding-sm;
+  background-color: $postbox-status-bg;
+}
+
+
+.ps-postbox-charcount {
+  position: absolute;
+  top: 0;
+  padding: 0 4px;
+  background-color: $postbox-charcount-bg;
+  color: $postbox-charcount-color;
+  font-size: ($font-size-base / 1.5);
+  line-height: 16px;
+
+  @if $scss-direction == rtl {
+    left: 0;
+  } @else {
+    right: 0;
+  }
+}
+
+
+.ps-postbox-input {
+  position: relative;
+  width: 100%;
+  min-height: 35px;
+
+  .ps-tagging-dropdown {
+    margin-top: 8px;
+  }
+}
+
+
+.ps-postbox-textarea {
+  padding: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: $font-size-alt;
+  line-height: $line-height-base;
+  color: $postbox-textarea-color;
+  resize: none;
+  outline: none;
+
+  &:focus {
+    background-color: transparent;
+    color: $postbox-textarea-color;
+  }
+}
+
+
+.ps-postbox-mirror {
+  color: transparent;
+  display: inline-block;
+  font-family: inherit;
+  font-size: $font-size-alt;
+  font-weight: normal;
+  line-height: $line-height-base;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+
+.ps-postbox-action {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+
+  @if $scss-direction == rtl {
+    left: 0;
+  } @else {
+    right: 0;
+  }
+}
+
+
+.ps-postbox-loading {
+  position: absolute;
+  bottom: 10px;
+
+  @if $scss-direction == rtl {
+    left: 10px;
+  } @else {
+    right: 10px;
+  }
+}
+
+
+.ps-postbox-tab {
+  position: relative;
+  background-color: $postbox-tab-bg;
+  font-size: $font-size-sm;
+
+  a {
+    display: block;
+    padding: ($padding-sm / 1.1) ($padding-sm / 1.5);
+    color: $postbox-tab-color !important;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: $postbox-tab-bg-hover;
+      color: $postbox-tab-color-hover !important;
+    }
+
+    > span {
+      line-height: 1 !important;
+      vertical-align: middle;
+
+      &.ps-icon-html-privacy {
+        display: none;
+
+        @include media('medium') {
+          display: inline-block;
+        }
+      }
+    }
+  }
+
+  li.active > a {
+    background-color: $postbox-tab-bg-active;
+    color: $postbox-tab-color-hover;
+  }
+
+  [class^="ps-icon"] {
+    fill: $postbox-tab-color;
+    line-height: 1.4em;
+    vertical-align: middle;
+  }
+
+  .ps-dropdown-trigger {
+    position: static;
+  }
+}
+
+
+.ps-postbox-tabs {
+  color: $postbox-color;
+
+  > div {
+    border-bottom: $postbox-tabs-border;
+    padding: $padding-sm $padding-sm 0;
+    display: none;
+    margin-bottom: -1px;
+  }
+}
+
+
+.ps-postbox-tab-more {
+  border-bottom: $postbox-tabs-border;
+}
+
+
+.ps-postbox-dropdown {
+  position: absolute;
+  z-index: map-get($zindex, dropdown);
+  top: 100%;
+  left: 2%;
+  width: 96%;
+  padding: $padding-sm;
+  border: $dropdown-border;
+  background-color: $dropdown-bg;
+}
+
+
+.ps-postbox-moods {
+  left: 2%;
+  width: 96%;
+  max-height: 140px;
+  padding: $padding-sm;
+  overflow-y: scroll;
+
+  > li {
+    width: 100%;
+  }
+
+  a {
+    display: inline-block;
+    width: 100%;
+    padding: ($padding-sm / 2) $padding-sm;
+
+    &:hover,
+    &:focus {
+      background-color: $dropdown-item-bg-hover;
+    }
+  }
+
+  span {
+    display: inline-block;
+
+    @if $scss-direction == rtl {
+      margin-right: $padding-sm;
+    } @else {
+      margin-left: $padding-sm;
+    }
+  }
+
+  @include media('medium') {
+    > li {
+      float: left;
+      width: 50%;
+    }
+  }
+}
+
+
+.ps-postbox-photo-upload {
+  padding-bottom: $padding-sm;
+  font-size: $font-size-base;
+  line-height: $line-height-base;
+  text-align: center;
+  cursor: pointer;
+
+  > span {
+    display: block;
+    margin-top: $padding-sm;
+    margin-bottom: 0;
+    color: $color-text-light;
+    font-size: $font-size-sm;
+    line-height: $line-height-sm;
+  }
+}
+
+
+.ps-postbox-info {
+  > span {
+    display: inline-block;
+    vertical-align: middle;
+  }
+}
+
+
+.ps-postbox-photo-progress {
+  background: $color-primary;
+  height: 6px;
+}
+
+
+.ps-postbox-photo-progressbar {
+  position: absolute;
+  left: 2px;
+  right: 7px;
+  bottom: 7px;
+  height: 6px;
+}
+
+
+.ps-postbox-photo-item {
+  position: relative;
+  float: left;
+  width: 16.6%;
+  height: 0;
+  margin: 0;
+  padding-bottom: 16.6%;
+
+  @if $scss-direction == rtl {
+    float: right;
+  } @else {
+    float: left;
+  }
+
+  .img-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: $postbox-img-border;
+    background-color: $postbox-img-bg;
+    cursor: move;
+
+    @extend %box-shadow;
+
+    canvas {
+      width: 100%;
+    }
+  }
+}
+
+
+.ps-postbox-photo-item-add {
+  position: relative;
+  width: 16.6%;
+  height: 0;
+  margin: 0;
+  padding-bottom: 16.6%;
+
+  @if $scss-direction == rtl {
+    float: right;
+  } @else {
+    float: left;
+  }
+
+  span {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    border: $postbox-img-border;
+    border-style: dashed;
+    cursor: pointer;
+    font-size: 30px;
+
+    @extend %box-shadow;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+
+.ps-postbox-photo-action {
+  position: absolute;
+  top: 1px;
+  right: 6px;
+  padding: 5px;
+  color: $postbox-img-action-color;
+  background-color: $postbox-img-action-bg;
+  text-align: center;
+
+  @extend %box-shadow;
+}
+
+
+.ps-postbox-photo-remove {
+  cursor: pointer;
+}
+
+
+.ps-postbox-photo-preview {
+  padding-bottom: $padding-base;
+  margin-bottom: $padding-sm;
+}
+
+
+.ps-postbox-location {
+  position: relative;
+
+  input[type="text"] {
+    width: 100%;
+    margin-bottom: 0;
+  }
+
+  .ps-location-action {
+    position: absolute;
+    top: $padding-sm;
+    right: $padding-sm;
+    width: auto;
+  }
+}
+
+
+.ps-postbox-locations {
+  @extend %ps-list;
+
+  overflow-y: scroll;
+  max-height: 150px;
+  margin-top: $padding-sm;
+
+  p {
+    font-weight: bold;
+  }
+
+  > li {
+    padding-top: 4px;
+    padding-bottom: 4px;
+    border-bottom: $dropdown-separator;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $dropdown-item-bg-hover;
+    }
+
+    &:last-child {
+      border: none;
+    }
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+.ps-postbox-map {
+  display: none;
+  width: 100%;
+  height: 200px;
+  margin-bottom: $padding-sm;
+}
+
+
+.ps-postbox-location-compact {
+  .ps-postbox-locmap {
+    min-height: 204px;
+
+    .ps-postbox-map {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 40%;
+      background-color: $postbox-tab-bg;
+    }
+
+    .ps-postbox-locct {
+      width: 58%;
+    }
+  }
+}
+
+
+.ps-postbox-privacy {
+  left: 2%;
+  width: 96%;
+  padding: $padding-sm;
+
+  p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold;
+    line-height: $line-height-base;
+  }
+
+  span {
+    line-height: $line-height-base;
+  }
+}
+
+
+.ps-postbox-videos {
+  .ps-textarea {
+    margin-top: 0;
+    margin-bottom: $padding-sm;
+    height: 33px;
+    resize: none;
+  }
+}
+
+
+.ps-postbox-preview {
+  .ps-media-video {
+    margin-bottom: $padding-sm;
+  }
+}
+
+
+//
+//  NEW POSTBOX
+//
+.ps-postbox__action {
+  display: flex;
+}
+
+
+.ps-postbox__menu {
+  display: flex;
+}
+
+
+.ps-postbox__menu-item {}
+
+
+.ps-postbox--messages {
+  .ps-postbox__action {
+    flex-wrap: wrap;
+
+    @include media('small') {
+      position: static;
+      justify-content: flex-end;
+    }
+  }
+}

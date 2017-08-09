@@ -1,0 +1,120 @@
+//
+//  TAGGING COMPONENT
+//
+
+
+
+.ps-tagging-wrapper {
+  position: relative;
+  line-height: 1;
+}
+
+
+.ps-tagging-textarea,
+.ps-tagging-beautifier {
+  font-size: $font-size-alt;
+  line-height: $line-height-base;
+  font-family: inherit;
+  font-weight: normal;
+}
+
+
+.ps-tagging-textarea {
+  position: relative;
+  background-color: transparent;
+  &:focus {
+    background-color: transparent;
+  }
+}
+
+
+.ps-tagging-beautifier {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  min-height: 0;
+  color: transparent;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.ps-tagging-hidden {
+  display: none;
+}
+
+
+.ps-tagging-dropdown {
+  position: absolute;
+  z-index: map-get($zindex, dropdown);
+  left: 0;
+  right: 0;
+  display: none;
+  margin-top: -3px;
+  border: $dropdown-border;
+  background: $dropdown-bg;
+  font-size: $font-size-sm;
+
+  > div {
+    border-bottom: $dropdown-separator;
+
+    &:last-child {
+      border-bottom: none;
+    }
+
+    &.active > a {
+      background-color: $dropdown-item-bg-hover;
+    }
+  }
+
+  a {
+    position: relative;
+    display: block;
+    padding: 4px $padding-sm 4px 43px;
+    outline: none;
+    min-height: 40px;
+    height: 40px;
+    overflow: hidden;
+
+    &:hover,
+    &:focus {
+      background-color: $dropdown-item-bg-hover;
+    }
+
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+      margin-right: -0.25em;
+    }
+
+    span {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+
+  .ps-avatar {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+
+    img {
+      padding: 2px;
+    }
+  }
+}
+
+
+.ps-tag {
+  display: inline;
+  background: $tagging-bg;
+  box-shadow: 0 0 0 1px $tagging-bg;
+  font-weight: inherit !important;
+}

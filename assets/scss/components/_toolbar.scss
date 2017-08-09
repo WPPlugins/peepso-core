@@ -1,0 +1,184 @@
+//
+//  TOOLBAR COMPONENT
+//
+//  Designed to display menu-items inline,
+//  supports dropdown and popover components.
+//
+
+
+
+.ps-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: $padding-base;
+  font-size: 14px;
+  line-height: 1;
+  background-color: $toolbar-bg;
+
+  @include media('medium') {
+    display: none;
+  }
+}
+
+
+.ps-toolbar__menu,
+.ps-toolbar__notifications {
+  display: flex;
+  width: 100%;
+
+  > span {
+    flex-grow: 1;
+
+    @if $scss-direction == rtl {
+      border-left: $toolbar-separator;
+
+      &:last-child {
+        border-left: none;
+      }
+    } @else {
+      border-right: $toolbar-separator;
+
+      &:last-child {
+        border-right: none;
+      }
+    }
+
+    > a {
+      display: block;
+      height: 100%;
+      padding: $padd--med $padd;
+      text-align: center;
+      color: $toolbar-color;
+
+      &:hover {
+        color: $toolbar-color--hover;
+        background-color: $toolbar-item-bg--hover;
+      }
+
+      @include media('medium') {
+        padding: $padd;
+      }
+    }
+
+    @include media('medium') {
+      flex-grow: 0;
+    }
+  }
+
+  @include media('medium') {
+    width: auto;
+  }
+}
+
+
+.ps-toolbar__notifications {
+  > a {
+    &:first-child {
+      @if $scss-direction == rtl {
+        border-left: none;
+      } @else {
+        border-right: none;
+      }
+    }
+  }
+}
+
+
+.ps-toolbar__submenu {
+  position: relative;
+  display: none;
+  width: 100%;
+  background-color: $toolbar-submenu-bg;
+  border: $toolbar-separator;
+  box-shadow: 0 -3px 1px $toolbar-submenu-shadow;
+
+  &.open {
+    display: block;
+  }
+
+  > a,
+  > span > a {
+    position: relative;
+    display: block;
+    padding: $padd $padd--med;
+    color: $toolbar-color;
+    border-bottom: $toolbar-separator !important;
+
+    &:hover {
+      color: $toolbar-color--hover;
+      background-color: $toolbar-item-bg--hover;
+    }
+
+    &:last-child {
+      border-bottom: none !important;
+    }
+
+    &.open {
+      &:hover {
+        background-color: $toolbar-submenu-bg;
+      }
+    }
+  }
+
+  > span {
+    display: block;
+    border-bottom: $toolbar-separator !important;
+
+    &.ps-dropdown > a {
+      &:after {
+        position: absolute;
+        top: $padd;
+        right: $padd--med;
+        display: block;
+        font-family: "peepso";
+        content: '\e818';
+      }
+
+      &.open:after {
+        content: '\e817';
+      }
+    }
+
+    &:last-child {
+      border-bottom: none !important;
+    }
+
+    > a:last-of-type {
+      border-bottom: none !important;
+    }
+  }
+
+  &:before {
+    position: absolute;
+    top: -12px;
+    left: 13px;
+    width: 0; 
+    height: 0; 
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $toolbar-submenu-shadow;
+    content: " ";
+  }
+
+  &:after {
+    position: absolute;
+    top: -8px;
+    left: 15px;
+    width: 0; 
+    height: 0; 
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid $toolbar-submenu-bg;
+    content: " ";
+  }
+}
+
+
+.ps-toolbar--desktop {
+  display: none;
+
+  @include media('medium') {
+    display: flex;
+  }
+}

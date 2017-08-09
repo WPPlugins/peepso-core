@@ -1,0 +1,63 @@
+//
+//  PROGRESS BAR COMPONENT
+//
+
+
+
+.ps-progress {
+  @extend %clearfix;
+
+  padding: $padding-base;
+  border: $divider;
+}
+
+
+.ps-progress-bar {
+  line-height: 0;
+  background-color: $progress-bar-bg;
+
+  > span {
+    display: inline-block;
+    padding: 2px;
+    line-height: 1;
+    font-weight: bold;
+    background-color: $progress-bar-bg-fill;
+    white-space: nowrap;
+    vertical-align: middle;
+    transition: width .5s ease-in;
+
+    //  Gradient background
+    background: -moz-linear-gradient(left,  $progress-bar-bg-fill 0%, lighten($progress-bar-bg-fill, 20%) 100%);
+    background: -webkit-linear-gradient(left,  $progress-bar-bg-fill 0%,lighten($progress-bar-bg-fill, 20%) 100%);
+    background: linear-gradient(to right,  $progress-bar-bg-fill 0%,lighten($progress-bar-bg-fill, 20%) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#87e0fd', endColorstr='#05abe0',GradientType=1 );
+
+    //  Text shadow
+    text-shadow: 0 1px 1px rgba(0,0,0,.25);
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .ps-widget--profile & {
+    margin-bottom: $padding-base;
+    font-size: 12px;
+  }
+}
+
+
+.ps-progress-status {
+  margin-bottom: ($padding-sm / 2);
+
+  .ps-widget--profile & {
+    margin-top: $padding-base;
+  }
+}
+
+
+.ps-progress-message {
+  margin-top: $padding-base;
+  line-height: 1;
+  color: $color-danger;
+}

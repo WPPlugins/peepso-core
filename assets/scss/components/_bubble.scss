@@ -1,0 +1,46 @@
+.ps-bubble__wrapper {
+  position: relative;
+}
+
+
+.ps-bubble {
+  position: absolute;
+  top: 0;
+  display: block;
+  width: 14px;
+  height: 14px;
+  font-size: 10px;
+  font-weight: bold;
+  line-height: 14px;
+  text-align: center;
+  color: #fff;
+  background-color: $color-danger;
+  border-radius: 100%;
+
+  @if $scss-direction == rtl {
+    left: 0;
+  } @else {
+    right: 0;
+  }
+}
+
+
+.ps-bubble--toolbar {
+  top: -18px;
+
+  @if $scss-direction == rtl {
+    left: -13px;
+  } @else {
+    right: -13px;
+  }
+
+  @include media('medium') {
+    top: -13px;
+
+    @if $scss-direction == rtl {
+      left: -13px;
+    } @else {
+      right: -13px;
+    }
+  }
+}

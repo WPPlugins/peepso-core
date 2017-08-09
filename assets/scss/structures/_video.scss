@@ -1,0 +1,108 @@
+//
+//  VIDEO
+//
+
+
+
+.ps-video {
+  margin: -2px;
+
+  @extend %clearfix;
+}
+
+
+.ps-video-wrapper {
+  width: 50%;
+  padding: 2px;
+
+  @if $scss-direction == rtl {
+    float: right;
+  } @else {
+    float: left;
+  }
+
+  @include media('medium') {
+    width: 33.33%;
+  }
+}
+
+
+.ps-video-item {
+  background-color: black;
+  overflow: hidden;
+
+  img {
+    top: 50%;
+    width: 100%;
+    vertical-align: middle;
+  }
+
+  @include media('small') {
+    height: 100px;
+  }
+
+  @include media('medium') {
+    height: 150px;
+  }
+
+  @include media('large') {
+    height: 200px;
+  }
+
+  .ps-list-half & {
+    height: 85px !important;
+  }
+}
+
+
+.ps-video-item > a {
+  position: relative;
+  top: 50%;
+  display: block;
+  transform: translateY(-50%)
+}
+
+
+.ps-video-item > a .ps-video-play {
+  color: rgba(255,255,255,0.5);
+  transition: all 0.2s ease;
+  text-shadow: 0 0 2px rgba(0,0,0,.25);
+}
+
+
+.ps-video-item > a:hover .ps-video-play,
+.ps-video-item > a:focus .ps-video-play {
+  color: white;
+}
+
+
+.ps-video-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -42px;
+  font-size: 60px;
+  line-height: 14px;
+  transform: translateY(-50%);
+}
+
+
+.ps-lightbox-object {
+  iframe {
+    display: inline-block;
+  }
+
+  @include media('large') {
+    iframe {
+      height: 100%;
+    }
+  }
+}
+
+
+/*  Fix for divi themes  */
+.fluid-width-video-wrapper {
+  .peepso & {
+    padding-top: 60% !important;
+  }
+}

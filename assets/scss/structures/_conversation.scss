@@ -1,0 +1,192 @@
+//
+//  CONVERSATION STRUCTURE
+//
+
+
+
+.ps-conversation-item {
+  position: relative;
+  padding-top: ($padding-sm / 2);
+  padding-bottom: ($padding-sm / 2);
+
+  &:before,
+  &:after {
+    clear: both;
+    display: block;
+    content: '';
+  }
+}
+
+
+.ps-conversation-user {
+  font-size: 11px;
+  line-height: $line-height-sm;
+
+  /*> a {
+    color: $conversation-name-color;
+  }*/
+
+  .my-message & {
+    display: none;
+  }
+}
+
+
+.ps-conversation-avatar {
+  float: left;
+  width: 15%;
+
+  .ps-avatar > img {
+    padding: 0;
+  }
+
+  .my-message & {
+    display: none;
+  }
+}
+
+
+.ps-conversation-body {
+  float: left;
+  width: 85%;
+  padding-left: $padding-sm;
+
+  .my-message & {
+    width: 100%;
+    padding-left: 0;
+    text-align: right;
+
+    /*a {
+      color: $conversation-link-color;
+
+      &:hover,
+      &:focus {
+        color: $conversation-link-hover;
+      }
+    }*/
+  }
+}
+
+
+.ps-conversation-content {
+  position: relative;
+  display: inline-block;
+  padding: 2.5px 6px;
+  line-height: $line-height-base;
+  color: $conversation-msg-color;
+  background-color: $conversation-msg-bg;
+  word-break: break-word;
+
+  > p {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: $font-family;
+    font-size: $font-size-sm;
+    line-height: $line-height-base;
+    color: $conversation-msg-color;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    border-width: 8px 5px 0 0;
+    border-color: transparent $conversation-msg-bg;
+    display: block;
+    width: 0;
+    left: -5px;
+    bottom: 0;
+  }
+
+  &:empty {
+    display: none;
+  }
+
+  .my-message & {
+    color: $conversation-my-msg-color;
+    background-color: $conversation-my-msg-bg;
+
+    p {
+      color: $conversation-my-msg-color;
+    }
+
+    &:after {
+      left: auto;
+      right: -5px;
+      border-width: 8px 0 0 5px;
+      border-color: transparent $conversation-my-msg-bg;
+    }
+  }
+}
+
+
+.ps-conversation-attachment {
+  display: block;
+  padding-top: ($padding-sm / 2);
+  margin: -1px;
+
+  img {
+    border-radius: $border-radius;
+    vertical-align: middle;
+  }
+
+  .my-message & {
+    text-align: right;
+  }
+
+  &:empty {
+    display: none;
+  }
+}
+
+
+.ps-conversation-photo-item {
+  display: inline-block;
+  width: 64px;
+  height: 64px;
+  padding: 1px;
+
+  .ps-messages-chat & {
+    margin-right: ($padding-sm / 2) !important;
+  }
+}
+
+.ps-conversation-photo-placeholder {
+  background-color: #FFF;
+  border-radius: 4px;
+  width: 62px;
+  height: 62px;
+  position: relative;
+  margin: 1px;
+
+  img {
+    position: absolute;
+    left: 24px;
+    top: 26px;
+    opacity: .5;
+  }
+}
+
+.ps-conversation-time {
+  line-height: $font-size-lg;
+  color: $color-text-light;
+
+  .ps-icon-ok {
+    color: #2FBA34;
+    display: none;
+    font-size: 9px;
+    font-weight: normal;
+
+    &.read {
+      display: inline;
+    }
+  }
+}
+
+.ps-no-checkmark {
+  .ps-icon-ok {
+    &.read {
+      display: none;
+    }
+  }
+}

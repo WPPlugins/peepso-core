@@ -1,0 +1,24 @@
+//
+//  BUTTON VARIANT MIXIN
+//
+//  "!important" property was used to avoid override by most popular
+//  Wordpress themes.
+
+
+
+@mixin button-variant($color, $background) {
+  color: $color !important;
+  background: $background !important;
+
+  &:hover,
+  &:focus,
+  &:active,
+  &.active {
+    color: $color !important;
+    background: lighten($background, 8%) !important;
+  }
+
+  .ps-icon {
+    fill: $color;
+  }
+}
